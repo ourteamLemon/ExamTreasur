@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9F6AD511-EBEF-47D5-9489-E52BC4A7CE4D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ExamTreasured</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2DCB73CE-148F-4A79-942A-F24D6F4950FD</key>
+		<string>https://github.com/ourteamLemon/ExamTreasured.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ExamTreasured.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2DCB73CE-148F-4A79-942A-F24D6F4950FD</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ourteamLemon/ExamTreasured.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2DCB73CE-148F-4A79-942A-F24D6F4950FD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2DCB73CE-148F-4A79-942A-F24D6F4950FD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ExamTreasured</string>
+		</dict>
+	</array>
+</dict>
+</plist>

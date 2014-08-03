@@ -1,0 +1,26 @@
+//
+//  PartnerConfig.h
+//  ExamTreasured
+//
+//  Created by yuan on 14-6-27.
+//  Copyright (c) 2014年 yuan. All rights reserved.
+//
+
+#ifndef ExamTreasured_PartnerConfig_h
+#define ExamTreasured_PartnerConfig_h
+
+//合作身份者id，以2088开头的16位纯数字
+#define PartnerID @"2088211547563262"
+
+//收款支付宝账号
+#define SellerID  @"shareforce@163.com"
+
+//商户私钥，自助生成
+#define PartnerPrivKey @"MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAJ4oXNYB/YSQ2kLzYHx3tbFjGf/d5NuG95Ylyw+c6nDWW3NDJBYHBf8JGeuxdbU0cdiqZiRNMmSzbmU1zDMOyVs79M+tVbdUzZMIwZy2s15wyssuS9o91FmbpoL1XRR0luQPTfwa+8fYNTo9eoPkwJW+6IYJ9RLluH9Y4b0PkJ+pAgMBAAECgYB1wUGVyXeTazJGpORS5+Jsx4eFHRYXaP8QWOU+o6teBgui3vuQNvx87a7R8JfeKcUV95EDOELr/TiVvJ9j6H979Z03mRuS3TVEAkiyBNoT2wsWL70rKJR7ConrsEjmvhxo+d/jZnzEoQrpvvZZ3/mkmLcN4YtQmg98ZoggfG1VAQJBAMqHuoGbEeJXBpRzyMuegJDAmksg1IvvhLem0CpWsSRV8WlbyDf2af6yj+LJwA3mYee0yk221Zf/hCS1krABAOECQQDH6aiFRj+5nVb1b6kWtzQcONX6Xa6xy8wuciytYSVdDIkT8DvcAsY1IvoMXwK1/Gaqj9zpIXDlJmzAnJdkMc/JAkA6Ugtq9vSXcOf8J7tSpznudQf5SmLqSPa2y9p11rD7/aOe60cklli/dzvn2qDrX8QhrPX0mwm202WCDKdI94EBAkAsmX9kRFjhMy38Ua36iGLSzQdH9PCNb/ccgZJgF+U7Dhni3dys592Ka0Q30FaNfUL2WGQjirdiGCF5EzZfPxGpAkEAgeqmlvzh20EqG7AdJF7brxo8cHx9AqLfzsAChDZxNw+mx/SBULO0Yw8hbHeaI/FTljeDOi+cA5/YoBTeqDO70g=="
+
+//支付宝公钥
+#define AlipayPubKey   @"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCnxj/9qwVfgoUh/y2W89L6BkRAFljhNhgPdyPuBV64bfQNN1PjbCzkIM6qRdKBoLPXmKKMiFYnkd6rAoprih3/PrQEB/VsW8OoM8fxn67UDYuyBTqA23MML9q1+ilIZwBC2AQ2UBVOrFXfFl75p6/B5KsiNG9zpgmLCUYuLkxpLQIDAQAB"
+
+//MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCnxj/9qwVfgoUh/y2W89L6BkRAFljhNhgPdyPuBV64bfQNN1PjbCzkIM6qRdKBoLPXmKKMiFYnkd6rAoprih3/PrQEB/VsW8OoM8fxn67UDYuyBTqA23MML9q1+ilIZwBC2AQ2UBVOrFXfFl75p6/B5KsiNG9zpgmLCUYuLkxpLQIDAQAB
+
+#endif
