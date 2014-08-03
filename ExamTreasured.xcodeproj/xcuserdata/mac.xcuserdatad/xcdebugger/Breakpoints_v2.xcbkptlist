@@ -535,8 +535,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "184"
             endingLineNumber = "184"
-            landmarkName = "-treeView:didSelectRowForItem:treeNodeInfo:"
-            landmarkType = "5">
+            landmarkName = "@implementation ZhangjieViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1045,8 +1045,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "165"
             endingLineNumber = "165"
-            landmarkName = "-treeView:numberOfChildrenOfItem:"
-            landmarkType = "5">
+            landmarkName = "@implementation ZhangjieViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

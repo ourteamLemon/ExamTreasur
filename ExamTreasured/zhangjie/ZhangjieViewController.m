@@ -154,6 +154,9 @@
     if (!cell) {
           cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifer];
     }
+    
+    
+    
     cell.textLabel.text = ((RADataObject *)item).name;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
