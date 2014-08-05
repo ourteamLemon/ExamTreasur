@@ -42,6 +42,8 @@
     [self.sectionView addSubview:analysislabel];
     self.sectionView.hidden = YES;
     // Do any additional setup after loading the view.
+    
+    NSLog(@"lijingmingTEST");
 }
 
 - (void)didReceiveMemoryWarning

@@ -38,6 +38,7 @@
     [self addNaviRightBtn];
     [self addNaviLeftBtnWithImageName:@"back" andFrame:CGRectMake(0, 2,30,30) target:self action:@selector(backController)];
     [self setNaviTitle:@"攻略园"];
+    NSLog(@"lijingming gonglueyuan");
     
     UIImage *nav_background = [UIImage imageNamed:@"navgation"];
     [self setNaviBackGroundWithImage:nav_background];
