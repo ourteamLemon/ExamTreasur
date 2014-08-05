@@ -41,7 +41,6 @@
     
 
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_backBtn];
-    NSLog(@"pp");
 }
 - (void)addNaviLeftBtnWithName:(NSString*)iName andFrame:(CGRect)rect target:(id)aTarget action:(SEL)action
 {

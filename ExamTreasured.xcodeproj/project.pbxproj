@@ -212,6 +212,7 @@
 		0468EF74195738DB00BA7B0A /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0468EF63195738DB00BA7B0A /* libssl.a */; };
 		0492B5FA1982840700119D6A /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0492B5F91982840700119D6A /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0493CAE8198FDCD50004726F /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 0493CAE7198FDCD50004726F /* NSString+MD5.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0495082519914DCF0017C87B /* ShoppingCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0495082419914DCF0017C87B /* ShoppingCartViewController.m */; };
 		04C592DC1934DFD900B9EE72 /* ExamTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C592DB1934DFD900B9EE72 /* ExamTestViewController.m */; };
 		04C592DF1934E9DA00B9EE72 /* ExamData.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C592DE1934E9DA00B9EE72 /* ExamData.m */; };
 		04C592E319350DD900B9EE72 /* ZhangjieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C592E219350DD900B9EE72 /* ZhangjieViewController.m */; };
@@ -692,6 +693,8 @@
 		0492B5F91982840700119D6A /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		0493CAE6198FDCD50004726F /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		0493CAE7198FDCD50004726F /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		0495082319914DCF0017C87B /* ShoppingCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartViewController.h; sourceTree = "<group>"; };
+		0495082419914DCF0017C87B /* ShoppingCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartViewController.m; sourceTree = "<group>"; };
 		04C592DA1934DFD900B9EE72 /* ExamTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamTestViewController.h; sourceTree = "<group>"; };
 		04C592DB1934DFD900B9EE72 /* ExamTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamTestViewController.m; sourceTree = "<group>"; };
 		04C592DD1934E9DA00B9EE72 /* ExamData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamData.h; sourceTree = "<group>"; };
@@ -1479,6 +1482,8 @@
 				04DFAC79197E411D00FAF1DF /* PayProductViewController.h */,
 				04DFAC7A197E411D00FAF1DF /* PayProductViewController.m */,
 				04DFAC7B197E411D00FAF1DF /* PayProductViewController.xib */,
+				0495082319914DCF0017C87B /* ShoppingCartViewController.h */,
+				0495082419914DCF0017C87B /* ShoppingCartViewController.m */,
 			);
 			path = PayView;
 			sourceTree = "<group>";
@@ -2625,6 +2630,7 @@
 				8C73ABB4192C4A2C0095E5B3 /* AboutViewController.m in Sources */,
 				04FE7C91191E873C00DC77D8 /* MKNetworkOperation.m in Sources */,
 				0466263F191F49E50005F706 /* UIViewController+MMDrawerController.m in Sources */,
+				0495082519914DCF0017C87B /* ShoppingCartViewController.m in Sources */,
 				0493CAE8198FDCD50004726F /* NSString+MD5.m in Sources */,
 				0468EF6C195738DB00BA7B0A /* AlixPayResult.m in Sources */,
 				041B28C01966451B00FD4E0B /* BlockAlertView.m in Sources */,
