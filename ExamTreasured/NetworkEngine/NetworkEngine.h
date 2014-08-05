@@ -5,6 +5,8 @@
 //  Created by mac on 14-5-19.
 //  Copyright (c) 2014年 mac. All rights reserved.
 
+//10 代表
+
 #define HOST  @"www.doctorvbook.com"
 #define PROT  8080
 
@@ -71,8 +73,8 @@
  yh_id=272  用户ID  登陆给返回
 */
 //新添加的接口
-#pragma mark  获取用户权限  登陆进来调用，和切换职业的时候使用   10
-#define  UserHavePreWithProfessio  @"/Exam_sys/user_isUserHavePreWithProfession.action"
+#pragma mark  获取用户权限    登陆进来调用，和切换职业的时候使用   10
+#define  UserHavePreWithProfession  @"/Exam_sys/user_isUserHavePreWithProfession.action"
 
 // key   App_os  Value
 #pragma mark 获取最新app版本   10

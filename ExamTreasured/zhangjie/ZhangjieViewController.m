@@ -11,10 +11,12 @@
 #import "ChapterQAViewController.h"
 #import "MBProgressHUD.h"
 #import "AppDelegate.h"
-
 #import "ChapterModel.h"
-@interface ZhangjieViewController ()
 
+@interface ZhangjieViewController ()
+{
+    
+}
 @end
 
 @implementation ZhangjieViewController
@@ -41,19 +43,17 @@
 - (void)viewDidLoad
 {
 //    [super viewDidLoad];
-    
+
     [self setNavgation];
-    [self getAllOveryearsByZyid: m_AppDelegate.zy_ID];
+    [self getAllOveryearsByZyidok: m_AppDelegate.zy_ID];
     [self initData];
 }
 
 
 //获取章节列表
-- (void)getAllOveryearsByZyid:(NSString*)zyId
+- (void)getAllOveryearsByZyidok:(NSString*)zyId
 {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    
-
     NSDictionary  *dic = [[NSDictionary alloc]initWithObjectsAndKeys:zyId,@"zy_id", nil];
     MKNetworkOperation  *op = [m_AppDelegate.networkEngineinstace getdata:dic path:NOTE_GETCHAPTERMINUTIA httpMethod:POST];
     NSLog(@"%@",op.url);
@@ -65,7 +65,7 @@
          if (dic && [dic count] > 0)
          {
              dataSourceArray = [NSArray arrayWithArray:dic];
-             [self zuzhuangList:dic];
+             [self zuzhuangListok:dic];
          }
      }errorHandler:^(MKNetworkOperation *completedOperation, NSError *error)
      {
@@ -130,15 +130,16 @@
 
 - (BOOL)treeView:(RATreeView *)treeView shouldExpandItem:(id)item treeNodeInfo:(RATreeNodeInfo *)treeNodeInfo
 {
-    return YES;
+    return NO;
 }
 
 - (BOOL)treeView:(RATreeView *)treeView shouldItemBeExpandedAfterDataReload:(id)item treeDepthLevel:(NSInteger)treeDepthLevel
 {
-    if ([item isEqual:self.expanded]) {
-        return NO;
+    if ( [item isEqual:self.expanded]|| (treeDepthLevel == 0) )
+    {
+        return YES;
     }
-    return YES;
+    return NO;
 }
 
 #pragma mark TreeView Data Source
@@ -147,16 +148,10 @@
 {
     static NSString *identifer = @"cell";
     UITableViewCell *cell = [treeView dequeueReusableCellWithIdentifier:identifer];
-   
-    
-    
     
     if (!cell) {
           cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifer];
     }
-    
-    
-    
     cell.textLabel.text = ((RADataObject *)item).name;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
@@ -191,13 +186,13 @@
     
     NSLog(@"%d---%d---%d\n%d---%d---%d",treeNodeInfo.treeDepthLevel,treeNodeInfo.siblingsNumber,treeNodeInfo.positionInSiblings,treeNodeInfo.parent.treeDepthLevel,treeNodeInfo.parent.siblingsNumber,treeNodeInfo.parent.positionInSiblings);
     
-    if (treeNodeInfo.treeDepthLevel == 1) {
-        NSDictionary *tempDic = [[[dataSourceArray objectAtIndex:treeNodeInfo.parent.positionInSiblings]  objectForKey:@"units"] objectAtIndex:treeNodeInfo.positionInSiblings];
-        
-        ChapterQAViewController  *chapterQAVC = [[ChapterQAViewController alloc]initWithDictionary:tempDic index:treeNodeInfo.positionInSiblings];
-        UINavigationController *ChapterNav = [[UINavigationController alloc]initWithRootViewController:chapterQAVC];
-        [self presentViewController:ChapterNav animated:YES completion:nil];
-    }
+//    if (treeNodeInfo.treeDepthLevel == 1) {
+//        NSDictionary *tempDic = [[[dataSourceArray objectAtIndex:treeNodeInfo.parent.positionInSiblings]  objectForKey:@"units"] objectAtIndex:treeNodeInfo.positionInSiblings];
+//        
+//        ChapterQAViewController  *chapterQAVC = [[ChapterQAViewController alloc]initWithDictionary:tempDic index:treeNodeInfo.positionInSiblings];
+//        UINavigationController *ChapterNav = [[UINavigationController alloc]initWithRootViewController:chapterQAVC];
+//        [self presentViewController:ChapterNav animated:YES completion:nil];
+//    }
     
 }
 
@@ -206,7 +201,7 @@
 
 //overwrite  method
 //遍历数据库上请求下来的数据
--(void)zuzhuangList:(NSArray *)array
+-(void)zuzhuangListok:(NSArray *)array
 {
     
     NSMutableArray  *mutabArray = [[NSMutableArray alloc]init];
@@ -215,9 +210,11 @@
         NSMutableArray  *secondArray = [[NSMutableArray alloc]init];
         for (NSDictionary *seconddic  in [firstdic objectForKey:@"ZJ"])
         {
+           
             NSMutableArray  *thirdArray = [[NSMutableArray alloc]init];
             for (NSDictionary *thirdDic in [seconddic objectForKey:@"minutia"])
             {
+                
                 ChapterModel *thirdChapter = [[ChapterModel alloc]initWithName:[thirdDic objectForKey:@"XJ_MC"] children:nil];
                 ChapterDatemMinutia   *dateMinutia = [[ChapterDatemMinutia alloc]init];
                 

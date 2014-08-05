@@ -38,12 +38,6 @@
 -(void)initData
 {
 
-    [super viewDidLoad];
-   
-    [self setNavgation];
-    [self getAllOveryearsByZyid:m_AppDelegate.zy_ID];
-    [self addNaviRightBtn];
-
     int tempH = 0;
     CGRect  treeRect;
     if (isIPhone5) {
@@ -66,11 +60,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
     [self setNavgation];
     [self getAllOveryearsByZyid: m_AppDelegate.zy_ID];
     [self initData];
-   }
+    [self setNavgation];
+    [self addNaviRightBtn];
+}
+
 - (BOOL)treeView:(RATreeView *)treeView canEditRowForItem:(id)item treeNodeInfo:(RATreeNodeInfo *)treeNodeInfo
 {
     return  NO;

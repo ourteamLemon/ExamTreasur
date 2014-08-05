@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ShowViewCotroller.h"
 @interface ZhangjieViewController : ShowViewCotroller<RATreeViewDelegate, RATreeViewDataSource>
+{
 
+}
 @end

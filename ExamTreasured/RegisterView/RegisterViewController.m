@@ -9,6 +9,7 @@
 #import "RegisterViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "MBProgressHUD.h"
+#import "NSString+MD5.h"
 @interface RegisterViewController ()
 
 @end
@@ -24,6 +25,7 @@
     }
     return self;
 }
+
 - (id)initWithtitle :(NSString*)titleString
 {
     self = [super initWithNibName:nil bundle:nil];
@@ -55,6 +57,7 @@
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
+
 - (void)setiTextField
 {
     nameTextField = [[UITextField alloc] initWithFrame:CGRectMake(100,10 ,200  ,30 )];
@@ -92,6 +95,7 @@
     [returnbtn addTarget:self action:@selector(regisertbecome) forControlEvents:UIControlEventTouchDown];
     [self.view addSubview:returnbtn];
 }
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -105,6 +109,7 @@
     
     
 }
+
 - (void)initbtn
 {
     UIButton  *registBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -116,7 +121,6 @@
     [registBtn addTarget:self action:@selector(setregisterBtnEvent) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:registBtn];
 }
-
 
 - (void)initiTableView
 {
@@ -132,23 +136,12 @@
 
     [self.view addSubview:self.iTableView];
 }
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 
 
 #pragma mark tableViewdelegate
@@ -169,6 +162,7 @@
         return 1;
     }
 }
+
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     if (section == 1)
@@ -270,6 +264,7 @@
     [cell addSubview:namelabel];
     return cell;
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self regisertbecome];
@@ -298,6 +293,7 @@
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES%@",emailRegex];
     return [emailTest evaluateWithObject:emailTextField.text];
 }
+
 - (BOOL)checkPasswd
 {
     if ([passWdTextField.text isEqualToString:suerPasswdTextField.text])
@@ -322,30 +318,15 @@
         return NO;
     }
     
-//    if (![self checkPasswd])
-//    {
-//        [self showMBProgressHUDByString:@"两次密码输入不一致"];
-//        return NO;
-//    }
     if ([neroTextField.text isEqualToString:@""])
     {
         [self showMBProgressHUDByString:@"请输入昵称"];
         return NO;
     }
-    
-//    if (![self checkIsemail])
-//    {
-//        [self showMBProgressHUDByString:@"请输入正确邮箱"];
-//        return NO;
-//    }
-//    if ([phoneNumTextField.text isEqualToString:@""])
-//    {
-//        [self showMBProgressHUDByString:@"请输入电话号码"];
-//        return NO;
-//    }
     return YES;
-
 }
+
+
 //提交
 - (void)setregisterBtnEvent
 {
@@ -362,20 +343,32 @@
 //    user.IMSI      可传可不传
 //    user.OSLX      可传可不传
 //    user.OSBB      可传可不传
-    
+//    m_AppDelegate.UUidStr,@"user.IMEI",[m_AppDelegate.UUidStr md5] ,@"user.IMEIMD5"
+  
     if ([self checkItemTextField])
     {
         NSDictionary  *dic = [[NSDictionary alloc]initWithObjectsAndKeys:nameTextField.text,@"user.ACCOUNT",
                               passWdTextField.text,@"user.PASSWORD" , neroTextField.text,@"user.USERNAME",
-                             @"1",@"user.ENABLED",@"1",@"user.LOCKED",@"1",@"user.SEX", m_AppDelegate.UUidStr,@"user.IMEI",nil];
+                             @"1",@"user.ENABLED",@"1",@"user.LOCKED",@"1",@"user.SEX" ,nil];
         MKNetworkOperation *op =   [m_AppDelegate.networkEngineinstace  getdata:dic path:ADDUSER httpMethod:GET];
         
         [op addCompletionHandler:^(MKNetworkOperation *completedOperation)
          {
              NSDictionary *dic = [completedOperation responseJSON];
              if (dic) {
-                 NSString *returnStr = [dic objectForKey:@"message"];
-                 [self showMBProgressHUDByString:returnStr];
+                 
+                 if ([[dic objectForKey:@"amount"]isEqualToString:@"3"])
+                 {
+                     MBProgressHUD *hud  = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                     hud.labelText = @"注册成功，首次注册赠送3天会员";
+                     hud.mode = MBProgressHUDModeText;
+                     [hud hide:YES afterDelay:2];
+                   
+                     [self performSelector:@selector(backController)
+                                withObject:@"Grand Central Dispatch"
+                                afterDelay:2.0];
+                 }
+
              }
          } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
          }];

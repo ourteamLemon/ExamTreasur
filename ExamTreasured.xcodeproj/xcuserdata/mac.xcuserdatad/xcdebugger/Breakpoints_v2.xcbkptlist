@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ExamTreasured/ShowTableView/ShowViewCotroller.m"
-            timestampString = "428753612.988731"
+            timestampString = "428855818.781664"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "-initData"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ExamTreasured/ShowTableView/ShowViewCotroller.m"
-            timestampString = "427655018.124668"
+            timestampString = "428855818.781664"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "-treeView:canEditRowForItem:treeNodeInfo:"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ExamTreasured/RegisterView/RegisterViewController.m"
-            timestampString = "428119753.277314"
+            timestampString = "428900953.906322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "454"
-            endingLineNumber = "454">
+            startingLineNumber = "447"
+            endingLineNumber = "447">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -56,11 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ExamTreasured/RegisterView/RegisterViewController.m"
-            timestampString = "428119753.277314"
+            timestampString = "428900953.906322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "428"
-            endingLineNumber = "428">
+            startingLineNumber = "421"
+            endingLineNumber = "421">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -70,11 +70,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ExamTreasured/RegisterView/RegisterViewController.m"
-            timestampString = "428119753.277314"
+            timestampString = "428900953.906322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "436"
-            endingLineNumber = "436">
+            startingLineNumber = "429"
+            endingLineNumber = "429">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -132,7 +132,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ExamTreasured/MainScrollViewController.m"
-            timestampString = "427655018.124668"
+            timestampString = "428855849.136766"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
@@ -148,11 +148,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ExamTreasured/MainScrollViewController.m"
-            timestampString = "427655018.124668"
+            timestampString = "428855849.136766"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "283"
-            endingLineNumber = "283"
+            startingLineNumber = "284"
+            endingLineNumber = "284"
             landmarkName = "-textFieldShouldReturn:"
             landmarkType = "5">
          </BreakpointContent>
@@ -164,11 +164,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ExamTreasured/MainScrollViewController.m"
-            timestampString = "427655018.124668"
+            timestampString = "428855849.136766"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "-shoucangChange"
             landmarkType = "5">
          </BreakpointContent>
@@ -529,44 +529,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ExamTreasured/zhangjie/ZhangjieViewController.m"
-            timestampString = "428769614.959388"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
-            landmarkName = "@implementation ZhangjieViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ExamTreasured/zhangjie/ZhangjieViewController.m"
-            timestampString = "428769614.959388"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
-            landmarkName = "-treeView:child:ofItem:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ExamTreasured/ShowTableView/ShowViewCotroller.m"
-            timestampString = "427650904.93628"
+            timestampString = "428855818.781664"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "-treeView:didSelectRowForItem:treeNodeInfo:"
             landmarkType = "5">
          </BreakpointContent>
@@ -738,60 +706,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ExamTreasured/ShowTableView/ShowViewCotroller.m"
-            timestampString = "428753645.381888"
+            timestampString = "428855818.781664"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "229"
-            endingLineNumber = "229"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
             landmarkName = "-zuzhuangList:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ExamTreasured/zhangjie/ZhangjieViewController.m"
-            timestampString = "428753645.381888"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "-treeView:canEditRowForItem:treeNodeInfo:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ExamTreasured/zhangjie/ZhangjieViewController.m"
-            timestampString = "428753645.381888"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "-treeView:heightForRowForItem:treeNodeInfo:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ExamTreasured/zhangjie/ZhangjieViewController.m"
-            timestampString = "428753645.381888"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "-treeView:indentationLevelForRowForItem:treeNodeInfo:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -830,7 +750,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ExamTreasured/GongLue/GuoLueYuanViewController.m"
@@ -840,22 +760,6 @@
             startingLineNumber = "70"
             endingLineNumber = "70"
             landmarkName = "-getSourData"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ExamTreasured/zhangjie/ZhangjieViewController.m"
-            timestampString = "428769614.959388"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "258"
-            endingLineNumber = "258"
-            landmarkName = "-zuzhuangList:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -912,12 +816,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ExamTreasured/zhangjie/ZhangjieViewController.m"
-            timestampString = "428769614.959388"
+            timestampString = "428855818.781664"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
-            landmarkName = "-zuzhuangList:"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
+            landmarkName = "-zuzhuangListok:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -960,12 +864,58 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ExamTreasured/zhangjie/ZhangjieViewController.m"
-            timestampString = "428769614.959388"
+            timestampString = "428855818.781664"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
-            landmarkName = "-zuzhuangList:"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
+            landmarkName = "-zuzhuangListok:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ZhangjieViewController zuzhuangListok:]"
+                  moduleName = "ExamTreasured"
+                  urlString = "file:///Users/mac/Documents/ExamTreasur/ExamTreasured/zhangjie/ZhangjieViewController.m"
+                  timestampString = "428827941.37967"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "224"
+                  endingLineNumber = "224"
+                  offsetFromSymbolStart = "1614">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ZhangjieViewController zuzhuangListok:]"
+                  moduleName = "ExamTreasured"
+                  urlString = "file:///Users/mac/Documents/ExamTreasur/ExamTreasured/zhangjie/ZhangjieViewController.m"
+                  timestampString = "428827941.380081"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "224"
+                  endingLineNumber = "224"
+                  offsetFromSymbolStart = "1740">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ExamTreasured/zhangjie/ZhangjieViewController.m"
+            timestampString = "428855818.781664"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -976,12 +926,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ExamTreasured/zhangjie/ZhangjieViewController.m"
-            timestampString = "428769614.959388"
+            timestampString = "428855818.781664"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "231"
-            endingLineNumber = "231"
-            landmarkName = "-zuzhuangList:"
+            startingLineNumber = "261"
+            endingLineNumber = "261"
+            landmarkName = "-zuzhuangListok:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -992,28 +942,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ExamTreasured/zhangjie/ZhangjieViewController.m"
-            timestampString = "428769614.959388"
+            timestampString = "428855765.682011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
-            landmarkName = "-treeView:didSelectRowForItem:treeNodeInfo:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ExamTreasured/zhangjie/ZhangjieViewController.m"
-            timestampString = "428773594.667345"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
-            landmarkName = "-treeView:cellForItem:treeNodeInfo:"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "-initWittitle:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1023,13 +957,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ExamTreasured/zhangjie/ZhangjieViewController.m"
-            timestampString = "428769372.46197"
+            filePath = "ExamTreasured/RegisterView/RegisterViewController.m"
+            timestampString = "428899916.029551"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "-treeView:shouldItemBeExpandedAfterDataReload:treeDepthLevel:"
+            startingLineNumber = "357"
+            endingLineNumber = "357"
+            landmarkName = "-setregisterBtnEvent"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1039,14 +973,30 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ExamTreasured/zhangjie/ZhangjieViewController.m"
-            timestampString = "428773579.685018"
+            filePath = "ExamTreasured/RegisterView/RegisterViewController.m"
+            timestampString = "428899916.029551"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
-            landmarkName = "@implementation ZhangjieViewController"
-            landmarkType = "3">
+            startingLineNumber = "348"
+            endingLineNumber = "348"
+            landmarkName = "-setregisterBtnEvent"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ExamTreasured/RegisterView/RegisterViewController.m"
+            timestampString = "428899916.029551"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "350"
+            endingLineNumber = "350"
+            landmarkName = "-setregisterBtnEvent"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

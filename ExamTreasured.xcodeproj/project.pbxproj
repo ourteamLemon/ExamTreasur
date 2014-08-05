@@ -211,6 +211,7 @@
 		0468EF73195738DB00BA7B0A /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0468EF62195738DB00BA7B0A /* libcrypto.a */; };
 		0468EF74195738DB00BA7B0A /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0468EF63195738DB00BA7B0A /* libssl.a */; };
 		0492B5FA1982840700119D6A /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0492B5F91982840700119D6A /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0493CAE8198FDCD50004726F /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 0493CAE7198FDCD50004726F /* NSString+MD5.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		04C592DC1934DFD900B9EE72 /* ExamTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C592DB1934DFD900B9EE72 /* ExamTestViewController.m */; };
 		04C592DF1934E9DA00B9EE72 /* ExamData.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C592DE1934E9DA00B9EE72 /* ExamData.m */; };
 		04C592E319350DD900B9EE72 /* ZhangjieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C592E219350DD900B9EE72 /* ZhangjieViewController.m */; };
@@ -689,6 +690,8 @@
 		0468EF66195738DB00BA7B0A /* DataVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataVerifier.h; sourceTree = "<group>"; };
 		0492B5F81982840700119D6A /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		0492B5F91982840700119D6A /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		0493CAE6198FDCD50004726F /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		0493CAE7198FDCD50004726F /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		04C592DA1934DFD900B9EE72 /* ExamTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamTestViewController.h; sourceTree = "<group>"; };
 		04C592DB1934DFD900B9EE72 /* ExamTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamTestViewController.m; sourceTree = "<group>"; };
 		04C592DD1934E9DA00B9EE72 /* ExamData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamData.h; sourceTree = "<group>"; };
@@ -1722,6 +1725,15 @@
 			path = KeyChainItem;
 			sourceTree = "<group>";
 		};
+		0493CAE5198FDCD50004726F /* NSString+MD5 */ = {
+			isa = PBXGroup;
+			children = (
+				0493CAE6198FDCD50004726F /* NSString+MD5.h */,
+				0493CAE7198FDCD50004726F /* NSString+MD5.m */,
+			);
+			path = "NSString+MD5";
+			sourceTree = "<group>";
+		};
 		04C592D91934DFD900B9EE72 /* ExamTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -1932,6 +1944,7 @@
 		04FE7C4E191E873C00DC77D8 /* thirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				0493CAE5198FDCD50004726F /* NSString+MD5 */,
 				0492B5F71982840700119D6A /* KeyChainItem */,
 				041B286B1966451A00FD4E0B /* BlockAlertsAnd-ActionSheets */,
 				0468EF4A195738DB00BA7B0A /* alipay */,
@@ -2612,6 +2625,7 @@
 				8C73ABB4192C4A2C0095E5B3 /* AboutViewController.m in Sources */,
 				04FE7C91191E873C00DC77D8 /* MKNetworkOperation.m in Sources */,
 				0466263F191F49E50005F706 /* UIViewController+MMDrawerController.m in Sources */,
+				0493CAE8198FDCD50004726F /* NSString+MD5.m in Sources */,
 				0468EF6C195738DB00BA7B0A /* AlixPayResult.m in Sources */,
 				041B28C01966451B00FD4E0B /* BlockAlertView.m in Sources */,
 				04D1228A193D80A500BBC6A8 /* ExamTableViewCell.m in Sources */,

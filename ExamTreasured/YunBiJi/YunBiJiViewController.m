@@ -110,15 +110,15 @@
 
 - (BOOL)treeView:(RATreeView *)treeView shouldExpandItem:(id)item treeNodeInfo:(RATreeNodeInfo *)treeNodeInfo
 {
-    return YES;
+    return NO;
 }
 
 - (BOOL)treeView:(RATreeView *)treeView shouldItemBeExpandedAfterDataReload:(id)item treeDepthLevel:(NSInteger)treeDepthLevel
 {
-    if ([item isEqual:self.expanded]) {
-        return NO;
+    if ([item isEqual:self.expanded] || treeDepthLevel == 0) {
+        return YES;
     }
-    return YES;
+    return NO;
 }
 
 

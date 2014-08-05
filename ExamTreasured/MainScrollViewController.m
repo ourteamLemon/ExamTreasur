@@ -94,6 +94,7 @@
     [op addCompletionHandler:^(MKNetworkOperation *completedOperation)
      {
          NSDictionary *dic = [completedOperation responseJSON];
+         NSLog(@"%@",dic);
          
      } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
          
