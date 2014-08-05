@@ -39,6 +39,7 @@
     [_backBtn setBackgroundImage:_img forState:UIControlStateNormal];
     [_backBtn addTarget:aTarget action:action forControlEvents:UIControlEventTouchUpInside];
     
+
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_backBtn];
 }
 - (void)addNaviLeftBtnWithName:(NSString*)iName andFrame:(CGRect)rect target:(id)aTarget action:(SEL)action
