@@ -55,6 +55,11 @@
 //uuid
 @property (strong, nonatomic) NSString  *UUidStr;
 
+/**
+ *  是否有权限   1表示有
+ */
+@property (strong, nonatomic) NSString  *ishaveAuthority;
+
 -(void)enterLoginView;
 -(void)enterMianViewController;
 /** 壓縮到指定的尺寸，完全填充不會有空白 */

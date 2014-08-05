@@ -402,8 +402,6 @@
         case 2:
         {
             RegisterViewController  *regiVC = [[RegisterViewController alloc]initWithtitle:@"注册"];
-//            UINavigationController *NavRegVC =[[UINavigationController alloc]initWithRootViewController:regiVC];
-//            [self presentViewController:NavRegVC animated:YES completion:nil];
             [self.navigationController pushViewController:regiVC animated:YES];
         }
             break;
@@ -416,7 +414,6 @@
                 [op addCompletionHandler:^(MKNetworkOperation *completedOperation)
                  {
                      NSDictionary *dic = [completedOperation responseJSON];
-
                      NSLog(@"%@",[dic objectForKey:@"message"]);
                      if ([dic allKeys].count>2 )
                      {
@@ -428,9 +425,12 @@
                          m_AppDelegate.login_ID = [dic objectForKey:@"login_id"];
                          
                          ReadAndWrite  *rdwr = [[ReadAndWrite alloc]init];
+                         [rdwr deleteDocument];
                          [rdwr writePlistFile:dic];
-
-                         [self backController];
+                         
+                         //需要做一步检查权限
+                         [self checkUserAuthority];
+                      
                      }
                      else
                      {
@@ -666,9 +666,8 @@
             NSMutableDictionary *dicss = [[NSMutableDictionary alloc]initWithDictionary:dic];
             [dicss removeObjectForKey:@"message"];
             ReadAndWrite *readVC = [[ReadAndWrite alloc]init];
+            [readVC deleteDocument];
             [readVC writePlistFile:dicss];
-            
-            
             
             m_AppDelegate.yh_ID = [dic objectForKey:@"yh_id"];
             m_AppDelegate.username = [dic objectForKey:@"username"];
@@ -688,4 +687,29 @@
     
 }
 
+//    zy_id=1
+//    yh_id=272  用户ID  登陆给返回
+
+-(void)checkUserAuthority
+{
+    NSDictionary  *ProfessionDic = [[NSDictionary alloc]initWithObjectsAndKeys:m_AppDelegate.zy_ID,@"zy_id",m_AppDelegate.yh_ID,@"yh_id",nil];
+    MKNetworkOperation *op = [m_AppDelegate.networkEngineinstace  getdata:ProfessionDic path:UserHavePreWithProfession httpMethod:POST];
+    
+    [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+        NSDictionary *resultDic = [completedOperation responseJSON];
+        
+        if ([resultDic objectForKey:@"isHave"])
+        {
+            m_AppDelegate.ishaveAuthority = [resultDic objectForKey:@"isHave"];
+        }else
+        {
+        }
+        [self backController];
+
+    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+        NSLog(@"%@",error);
+        
+    }];
+     
+}
 @end

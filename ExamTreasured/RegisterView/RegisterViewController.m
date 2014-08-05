@@ -354,26 +354,17 @@
         
         [op addCompletionHandler:^(MKNetworkOperation *completedOperation)
          {
-             NSDictionary *dic = [completedOperation responseJSON];
-             if (dic) {
+             NSDictionary *resultDic = [completedOperation responseJSON];
+             if (resultDic) {
                  
-                 if ([[dic objectForKey:@"amount"]isEqualToString:@"3"])
+                 if ([[resultDic objectForKey:@"amount"]isEqualToString:@"3"])
                  {
                      MBProgressHUD *hud  = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
                      hud.labelText = @"注册成功，首次注册赠送3天会员";
                      hud.mode = MBProgressHUDModeText;
                      [hud hide:YES afterDelay:2];
-            
-                     ReadAndWrite  *readWrite = [[ReadAndWrite alloc]init];
-                     [readWrite deleteDocument];
-                     
-                     LoginViewController  *loginVC = (LoginViewController*)[[self.navigationController childViewControllers]objectAtIndex:0];
-                     
-                     loginVC.nameTextField = [dic objectForKey:@"user.ACCOUNT"];
-                     loginVC.pwdTextField = [dic objectForKey:@"user.PASSWORD"];
-                     [self performSelector:@selector(backController)
-                                withObject:@"Grand Central Dispatch"
-                                afterDelay:2.0];
+                     [self registerSuccessed];
+
                  }
 
              }
@@ -382,7 +373,19 @@
     }
 }
 
-
+-(void)registerSuccessed
+{
+    ReadAndWrite  *readWrite = [[ReadAndWrite alloc]init];
+    [readWrite deleteDocument];
+    
+    LoginViewController  *loginVC = (LoginViewController*)[[self.navigationController childViewControllers]firstObject];
+    
+    loginVC.nameTextField.text = nameTextField.text;
+    loginVC.pwdTextField.text = passWdTextField.text;
+    [self performSelector:@selector(backController)
+               withObject:@"Grand Central Dispatch"
+               afterDelay:2.0];
+}
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     [UIView beginAnimations:@"ResizeForKeyBoard" context:nil];

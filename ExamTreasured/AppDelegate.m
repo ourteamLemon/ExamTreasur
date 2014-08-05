@@ -33,6 +33,7 @@
 @synthesize username = _username;
 @synthesize yh_ID = _yh_ID;
 @synthesize UUidStr;
+@synthesize ishaveAuthority;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window                 = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -140,39 +141,6 @@
         block = [MMDrawerVisualState parallaxVisualStateBlockWithParallaxFactor:2.0];
         block(drawerController1, drawerSide, percentVisible);
     }];
-}
-
-
-- (void)checkIsmember
-{
-    
-//    NSDictionary  *dic = [[NSDictionary alloc]initWithObjectsAndKeys:nameTextField.text,@"user.ACCOUNT",
-//                          pwdTextField.text,@"user.PASSWORD",nil];
-//    MKNetworkOperation *op =   [m_AppDelegate.networkEngineinstace  getdata:dic path:LOGINACTION httpMethod:GET];
-//    
-//    [op addCompletionHandler:^(MKNetworkOperation *completedOperation)
-//     {
-//         NSDictionary *dic = [completedOperation responseJSON];
-//         
-//         if ([dic allKeys].count>2 )
-//         {
-//             NSString *returnStr = [dic objectForKey:@"message"];
-//             
-//             m_AppDelegate.yh_ID = [dic objectForKey:@"yh_id"];
-//             m_AppDelegate.username = [dic objectForKey:@"username"];
-//             m_AppDelegate.login_ID = [dic objectForKey:@"login_id"];
-//             
-//             ReadAndWrite  *rdwr = [[ReadAndWrite alloc]init];
-//             [rdwr writePlistFile:dic];
-//             
-//             
-//         }
-//         
-//     } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
-//         
-//     }];
-//
-    
 }
 
 -(void)enterLoginView
