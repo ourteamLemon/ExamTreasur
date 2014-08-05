@@ -21,7 +21,7 @@
 @end
 
 @implementation LoginViewController
-
+@synthesize nameTextField = _nameTextField,pwdTextField = _pwdTextField;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -41,7 +41,7 @@
     returnBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     returnBtn.frame = self.view.frame;
     [returnBtn setBackgroundColor:[UIColor clearColor]];
-    if ([nameTextField isFirstResponder] || [pwdTextField isFirstResponder]) {
+    if ([_nameTextField isFirstResponder] || [_pwdTextField isFirstResponder]) {
         returnBtn.hidden = NO;
     }
     else{
@@ -92,13 +92,13 @@
     
     rect = CGRectMake(0, 0, 220, 20);
     point = CGPointMake(175, 20);
-    nameTextField = [[UITextField alloc]initWithFrame:rect];
-    nameTextField.center = point;
-    nameTextField.textAlignment = NSTextAlignmentLeft;
-    nameTextField.placeholder = @"输入您的账号";
-    nameTextField.delegate = self;
-    nameTextField.clearButtonMode = UITextFieldViewModeWhileEditing; //编辑时会出现个修改X
-    [nameAndPwdView addSubview:nameTextField];
+    _nameTextField = [[UITextField alloc]initWithFrame:rect];
+    _nameTextField.center = point;
+    _nameTextField.textAlignment = NSTextAlignmentLeft;
+    _nameTextField.placeholder = @"输入您的账号";
+    _nameTextField.delegate = self;
+    _nameTextField.clearButtonMode = UITextFieldViewModeWhileEditing; //编辑时会出现个修改X
+    [nameAndPwdView addSubview:_nameTextField];
     
     //密码
     rect = CGRectMake(0, 0, 45, 20);
@@ -113,14 +113,14 @@
     
     rect = CGRectMake(0, 0, 220, 20);
     point = CGPointMake(175, 60);
-    pwdTextField = [[UITextField alloc]initWithFrame:rect];
-    pwdTextField.center = point;
-    pwdTextField.placeholder = @"输入您的密码";
-    pwdTextField.secureTextEntry = YES;
-    pwdTextField.delegate = self;
-    pwdTextField.clearButtonMode = UITextFieldViewModeWhileEditing; //编辑时会出现个修改X
-    pwdTextField.textAlignment = NSTextAlignmentLeft;
-    [nameAndPwdView addSubview:pwdTextField];
+    _pwdTextField = [[UITextField alloc]initWithFrame:rect];
+    _pwdTextField.center = point;
+    _pwdTextField.placeholder = @"输入您的密码";
+    _pwdTextField.secureTextEntry = YES;
+    _pwdTextField.delegate = self;
+    _pwdTextField.clearButtonMode = UITextFieldViewModeWhileEditing; //编辑时会出现个修改X
+    _pwdTextField.textAlignment = NSTextAlignmentLeft;
+    [nameAndPwdView addSubview:_pwdTextField];
 
 }
 - (void)initializationAotuLoginBtn{
@@ -402,14 +402,15 @@
         case 2:
         {
             RegisterViewController  *regiVC = [[RegisterViewController alloc]initWithtitle:@"注册"];
-            UINavigationController *NavRegVC =[[UINavigationController alloc]initWithRootViewController:regiVC];
-            [self presentViewController:NavRegVC animated:YES completion:nil];
+//            UINavigationController *NavRegVC =[[UINavigationController alloc]initWithRootViewController:regiVC];
+//            [self presentViewController:NavRegVC animated:YES completion:nil];
+            [self.navigationController pushViewController:regiVC animated:YES];
         }
             break;
         case 3:
         {
-                NSDictionary  *dic = [[NSDictionary alloc]initWithObjectsAndKeys:nameTextField.text,@"user.ACCOUNT",
-                                      pwdTextField.text,@"user.PASSWORD",nil];
+                NSDictionary  *dic = [[NSDictionary alloc]initWithObjectsAndKeys:_nameTextField.text,@"user.ACCOUNT",
+                                      _pwdTextField.text,@"user.PASSWORD",nil];
                 MKNetworkOperation *op =   [m_AppDelegate.networkEngineinstace  getdata:dic path:LOGINACTION httpMethod:GET];
                 
                 [op addCompletionHandler:^(MKNetworkOperation *completedOperation)
@@ -452,17 +453,17 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    if ([pwdTextField isFirstResponder])
+    if ([_pwdTextField isFirstResponder])
     {
-        [pwdTextField resignFirstResponder];
+        [_pwdTextField resignFirstResponder];
 //        [self registeredAction];  登陆操作
     }
     
-    if ([nameTextField isFirstResponder])
+    if ([_nameTextField isFirstResponder])
     {
-        [pwdTextField becomeFirstResponder];
+        [_pwdTextField becomeFirstResponder];
     }
-    if ([nameTextField isFirstResponder] || [pwdTextField isFirstResponder]) {
+    if ([_nameTextField isFirstResponder] || [_pwdTextField isFirstResponder]) {
         returnBtn.hidden = NO;
     }
     else{
@@ -479,8 +480,8 @@
 
 - (void)returnBtnPressed
 {
-    [pwdTextField resignFirstResponder];
-    [nameTextField resignFirstResponder];
+    [_pwdTextField resignFirstResponder];
+    [_nameTextField resignFirstResponder];
 }
 
 -(void)sinaBtnPressed:(id)sender

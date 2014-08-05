@@ -363,7 +363,14 @@
                      hud.labelText = @"注册成功，首次注册赠送3天会员";
                      hud.mode = MBProgressHUDModeText;
                      [hud hide:YES afterDelay:2];
-                   
+            
+                     ReadAndWrite  *readWrite = [[ReadAndWrite alloc]init];
+                     [readWrite deleteDocument];
+                     
+                     LoginViewController  *loginVC = (LoginViewController*)[[self.navigationController childViewControllers]objectAtIndex:0];
+                     
+                     loginVC.nameTextField = [dic objectForKey:@"user.ACCOUNT"];
+                     loginVC.pwdTextField = [dic objectForKey:@"user.PASSWORD"];
                      [self performSelector:@selector(backController)
                                 withObject:@"Grand Central Dispatch"
                                 afterDelay:2.0];

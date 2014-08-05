@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 @interface LoginViewController : UIViewController<UITextFieldDelegate>
 {
-    UITextField *nameTextField;
-    UITextField *pwdTextField;
+    UITextField *_nameTextField;
+    UITextField *_pwdTextField;
     UIButton *returnBtn;
     int     loginemum;
 }
+@property(nonatomic,strong) UITextField *nameTextField;
+@property(nonatomic,strong) UITextField *pwdTextField;
 @end
