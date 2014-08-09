@@ -22,6 +22,7 @@
 #import "YunBiJi/YunBiJiViewController.h"
 #import "zhangjie/ZhangjieViewController.h"
 #import "zhinengzujuan/ZhiNengZJViewController.h"
+#import "PayView/ShoppingCartViewController.h"
 @interface MiddleViewController ()
 @property (nonatomic , retain) CycleScrollView *mainScorllView;
 
@@ -391,10 +392,6 @@
                 break;
             case 7:
             {
-                //会员
-                //            AboutViewController *aboutVC = [[AboutViewController alloc]init];
-                //            UINavigationController *abNav = [[UINavigationController alloc]initWithRootViewController:aboutVC];
-                //            [self presentViewController:abNav animated:YES completion:nil];
                 
                 MemberViewController *mbVC = [[MemberViewController alloc]initWithtitle:@"信息中心"];
                 UINavigationController *NavmbVC = [[UINavigationController alloc]initWithRootViewController:mbVC];
@@ -404,13 +401,13 @@
                 break;
             case 8:
             {
-                //付款
-                PayViewController *buyVC = [[PayViewController alloc]initWithtitle:@"购物车"];
-                UINavigationController *payNav = [[UINavigationController alloc]initWithRootViewController:buyVC];
-                [self presentViewController:payNav animated:YES completion:nil];
+
+                ShoppingCartViewController  *ShoppingCartVC = [[ShoppingCartViewController alloc]initWithNibName:nil bundle:nil];
+                UINavigationController *NaVCPay = [[UINavigationController alloc]initWithRootViewController:ShoppingCartVC];
+                [self presentViewController:NaVCPay animated:YES completion:nil];
+                            
             }
                 break;
-                
             default:
                 break;
         }

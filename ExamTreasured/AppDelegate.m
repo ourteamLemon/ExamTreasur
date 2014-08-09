@@ -41,7 +41,7 @@
     
     self.networkEngineinstace   = [[NetworkEngine alloc]initWithHostName:HOST portNumber:PROT apiPath:nil customHeaderFields:nil];
     
-    [self initAppvalue];
+    [self assignmentAppvalue];
     [self initththirdPart];
     [self enterMianViewController];
     [Crashlytics startWithAPIKey:@"0d408bcd977f800691e4f63493abf44da3adc9f9"];
@@ -455,7 +455,7 @@
 //"yh_id" = 39;
 
 #pragma 初始化值
--(void)initAppvalue
+-(void)assignmentAppvalue
 {
     ReadAndWrite  *read      = [[ReadAndWrite alloc]init];
     NSMutableDictionary *dic = [read readPlistFile];
@@ -487,4 +487,5 @@
     self.aotuLogin = NO;
     UUidStr   = [self KeyChianItem];
 }
+
 @end

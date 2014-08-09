@@ -153,7 +153,6 @@
         
         
 #pragma  mark Crash
-//        [m_AppDelegate.zy_ID isEqualToString:[[iArray objectAtIndex:i] objectForKey:@"ZY_ID"]
         if ([m_AppDelegate.zy_ID isEqualToString:[[iArray objectAtIndex:i] objectForKey:@"ZY_ID"]]) {
             [selectJob1 setBackgroundColor:[UIColor colorWithRed:90/255.0 green:90/255.0 blue:90/255.0 alpha:0.3f]];
         }
@@ -192,8 +191,6 @@
             [m_AppDelegate enterLoginView];
         }
         break;
-            
-            
         default:
             break;
     }
@@ -205,8 +202,12 @@
     m_AppDelegate.username = @"";
     [self initController];
     ReadAndWrite  *rdwr = [[ReadAndWrite alloc]init];
-    [rdwr deleteDocument];
-
+    if ([rdwr deleteDocument])
+    {
+        NSLog(@"删除本地账号成功");
+    }
+    
+    [m_AppDelegate assignmentAppvalue];
     [self.view.layer setNeedsDisplay];
 }
 - (void)didReceiveMemoryWarning

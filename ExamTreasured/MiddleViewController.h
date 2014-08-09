@@ -15,5 +15,4 @@
 }
 @property (strong, nonatomic)NSMutableArray *mainViewArray;
 - (void)setNaviName:(NSString*)iString;
-
 @end

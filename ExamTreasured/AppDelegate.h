@@ -24,7 +24,6 @@
     LeftViewController *leftVC;
     MiddleViewController *middleVC;
     UINavigationController *navleft;
-
     NSArray *allProfession;
     
     //保存密码
@@ -44,24 +43,41 @@
 @property (strong, nonatomic) NetworkEngine   *networkEngineinstace;
 @property (assign) BOOL savePwd;
 @property (assign) BOOL aotuLogin;
+/*!
+ *   (
+ {
+ "IS_USE" = 1;
+ "ZY_ID" = 1;
+ "ZY_LX" = good;
+ "ZY_MC" = "\U4e34\U5e8a\U6267\U4e1a\U533b\U5e08";
+ "ZY_NF" = 2014;
+ "ZY_XF" = 100;
+ },
+ */
 @property (strong, nonatomic) NSArray *allProfession;
+//用户ID
 @property (strong, nonatomic) NSString *yh_ID;
+//登陆ID
 @property (strong, nonatomic) NSString *login_ID;
+//用户名称
 @property (strong, nonatomic) NSString *username;
+//职业ID
 @property (strong, nonatomic) NSString *zy_ID;
+
 @property (strong, nonatomic) NSDictionary *zyDic;
 @property (strong, nonatomic) MiddleViewController *middleVC;
 
 //uuid
 @property (strong, nonatomic) NSString  *UUidStr;
 
+
 /**
  *  是否有权限   1表示有
  */
 @property (strong, nonatomic) NSString  *ishaveAuthority;
 
--(void)enterLoginView;
--(void)enterMianViewController;
+- (void)enterLoginView;
+- (void)enterMianViewController;
 /** 壓縮到指定的尺寸，完全填充不會有空白 */
 + (UIImage *) clipImage: (UIImage *)image clipSize:(CGSize)clipSize;
 /** 壓縮到指定的尺寸，可能會有空白 */
@@ -71,4 +87,6 @@
 
 - (void)customShareMenuClickHandler:(UIButton *)sender;
 - (NSString *)KeyChianItem;
+
+- (void)assignmentAppvalue;
 @end

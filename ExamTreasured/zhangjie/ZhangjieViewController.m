@@ -47,8 +47,21 @@
     [self setNavgation];
     [self getAllOveryearsByZyidok: m_AppDelegate.zy_ID];
     [self initData];
+    [self addNaviRightBtn];
 }
 
+
+
+- (void)addNaviRightBtn
+{
+    UIButton *_backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _backBtn.frame = CGRectMake(0, 2,130,30);
+    [_backBtn setTitle:@"www.doctorvbook.com" forState:UIControlStateNormal];
+    _backBtn.titleLabel.font = [UIFont systemFontOfSize:8.0];
+    _backBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    [_backBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_backBtn];
+}
 
 //获取章节列表
 - (void)getAllOveryearsByZyidok:(NSString*)zyId

@@ -46,6 +46,7 @@
     [self setNaviBackGroundWithImage:nav_background];
 }
 
+
 - (void)backController
 {
     if ([self.navigationController.childViewControllers objectAtIndex:0] == self)

@@ -77,6 +77,8 @@
 		04007BA5192DFBFE00BCD872 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 04007BA4192DFBFE00BCD872 /* libstdc++.dylib */; };
 		04007C42192F928400BCD872 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04007C41192F928400BCD872 /* MessageUI.framework */; };
 		04007C4419311ADC00BCD872 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 04007C4319311ADC00BCD872 /* libsqlite3.0.dylib */; };
+		040969191992A78B0022255E /* ShopCartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040969171992A78B0022255E /* ShopCartTableViewCell.m */; };
+		0409691A1992A78B0022255E /* ShopCartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040969181992A78B0022255E /* ShopCartTableViewCell.xib */; };
 		04103B78191F4BB10007218D /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04103B77191F4BB10007218D /* LeftViewController.m */; };
 		04103B7C191F4BE60007218D /* MiddleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04103B7B191F4BE60007218D /* MiddleViewController.m */; };
 		041B289F1966451A00FD4E0B /* action-black-button-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 041B286F1966451A00FD4E0B /* action-black-button-selected.png */; };
@@ -237,8 +239,6 @@
 		04DFAC69197CB03E00FAF1DF /* ChapterA1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DFAC68197CB03E00FAF1DF /* ChapterA1ViewController.m */; };
 		04DFAC75197D08EE00FAF1DF /* ChapterQAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DFAC74197D08EE00FAF1DF /* ChapterQAViewController.m */; };
 		04DFAC78197D746900FAF1DF /* CapionTableviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DFAC77197D746900FAF1DF /* CapionTableviewCell.m */; };
-		04DFAC7C197E411D00FAF1DF /* PayProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DFAC7A197E411D00FAF1DF /* PayProductViewController.m */; };
-		04DFAC7D197E411D00FAF1DF /* PayProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DFAC7B197E411D00FAF1DF /* PayProductViewController.xib */; };
 		04FE7C1C191DF6A300DC77D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FE7C1B191DF6A300DC77D8 /* Foundation.framework */; };
 		04FE7C1E191DF6A300DC77D8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FE7C1D191DF6A300DC77D8 /* CoreGraphics.framework */; };
 		04FE7C20191DF6A300DC77D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FE7C1F191DF6A300DC77D8 /* UIKit.framework */; };
@@ -492,6 +492,9 @@
 		04007BA4192DFBFE00BCD872 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		04007C41192F928400BCD872 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		04007C4319311ADC00BCD872 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		040969161992A78B0022255E /* ShopCartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCartTableViewCell.h; sourceTree = "<group>"; };
+		040969171992A78B0022255E /* ShopCartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCartTableViewCell.m; sourceTree = "<group>"; };
+		040969181992A78B0022255E /* ShopCartTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopCartTableViewCell.xib; sourceTree = "<group>"; };
 		04103B76191F4BB10007218D /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
 		04103B77191F4BB10007218D /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		04103B7A191F4BE60007218D /* MiddleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiddleViewController.h; sourceTree = "<group>"; };
@@ -732,9 +735,6 @@
 		04DFAC74197D08EE00FAF1DF /* ChapterQAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChapterQAViewController.m; sourceTree = "<group>"; };
 		04DFAC76197D746900FAF1DF /* CapionTableviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapionTableviewCell.h; sourceTree = "<group>"; };
 		04DFAC77197D746900FAF1DF /* CapionTableviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapionTableviewCell.m; sourceTree = "<group>"; };
-		04DFAC79197E411D00FAF1DF /* PayProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayProductViewController.h; sourceTree = "<group>"; };
-		04DFAC7A197E411D00FAF1DF /* PayProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayProductViewController.m; sourceTree = "<group>"; };
-		04DFAC7B197E411D00FAF1DF /* PayProductViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayProductViewController.xib; sourceTree = "<group>"; };
 		04FE7C18191DF6A300DC77D8 /* ExamTreasured.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExamTreasured.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04FE7C1B191DF6A300DC77D8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		04FE7C1D191DF6A300DC77D8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1479,11 +1479,11 @@
 				0442BD401929C14200C3D6EB /* PayViewController.h */,
 				0442BD411929C14200C3D6EB /* PayViewController.m */,
 				8C7F9E17195D3D3200AA1CC6 /* PartnerConfig.h */,
-				04DFAC79197E411D00FAF1DF /* PayProductViewController.h */,
-				04DFAC7A197E411D00FAF1DF /* PayProductViewController.m */,
-				04DFAC7B197E411D00FAF1DF /* PayProductViewController.xib */,
 				0495082319914DCF0017C87B /* ShoppingCartViewController.h */,
 				0495082419914DCF0017C87B /* ShoppingCartViewController.m */,
+				040969161992A78B0022255E /* ShopCartTableViewCell.h */,
+				040969171992A78B0022255E /* ShopCartTableViewCell.m */,
+				040969181992A78B0022255E /* ShopCartTableViewCell.xib */,
 			);
 			path = PayView;
 			sourceTree = "<group>";
@@ -2375,7 +2375,6 @@
 				8CBB280A1929F2CE00A41B8B /* renren_logo@2x.png in Resources */,
 				041B28AE1966451A00FD4E0B /* alert-black-button@2x.png in Resources */,
 				041B28A21966451A00FD4E0B /* action-black-button@2x.png in Resources */,
-				04DFAC7D197E411D00FAF1DF /* PayProductViewController.xib in Resources */,
 				B0614613192A64A900B8C7E4 /* sysmain_fav.png in Resources */,
 				8CB964391945ABC20074A3C9 /* button_press9@2x.png in Resources */,
 				8CB9643A1945ABC20074A3C9 /* button_unpress9@2x.png in Resources */,
@@ -2526,6 +2525,7 @@
 				0442BD311928C59F00C3D6EB /* navgation.png in Resources */,
 				8CB96433194593D30074A3C9 /* gonglue_qxsc_h.png in Resources */,
 				8CB9641A1945591F0074A3C9 /* sysmain_kqcc4@2x.png in Resources */,
+				0409691A1992A78B0022255E /* ShopCartTableViewCell.xib in Resources */,
 				8C27C5E3195124A4006F927E /* sc_st_h@2x.png in Resources */,
 				B0614600192A533E00B8C7E4 /* sysmain_fxbj_h.png in Resources */,
 				0468EF68195738DB00BA7B0A /* Alixpay.bundle in Resources */,
@@ -2679,9 +2679,9 @@
 				04103B78191F4BB10007218D /* LeftViewController.m in Sources */,
 				04FE7C88191E873C00DC77D8 /* MBProgressHUD.m in Sources */,
 				B022FEDE193A329200A703E9 /* NSTimer+Addition.m in Sources */,
+				040969191992A78B0022255E /* ShopCartTableViewCell.m in Sources */,
 				04FE7C8A191E873C00DC77D8 /* NSData+MKBase64.m in Sources */,
 				04C592EA19350E6800B9EE72 /* PersonalInformationViewController.m in Sources */,
-				04DFAC7C197E411D00FAF1DF /* PayProductViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2854,7 +2854,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "F2CFDF49-2A22-4D61-93CF-EF06B6C60E53";
+				PROVISIONING_PROFILE = "2A2BE3F6-C3E7-4C35-8EC5-CF54953466C7";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
@@ -2900,7 +2900,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "F2CFDF49-2A22-4D61-93CF-EF06B6C60E53";
+				PROVISIONING_PROFILE = "2A2BE3F6-C3E7-4C35-8EC5-CF54953466C7";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
