@@ -13,6 +13,8 @@
     CGFloat        tableViewYheight;
     //contain charelist Object
     NSMutableArray *rechargeArray;
+    //提示
+    MBProgressHUD  *hud;
 }
 @property (nonatomic, strong)UITableView *iTableView;
 

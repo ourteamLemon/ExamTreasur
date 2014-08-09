@@ -232,8 +232,9 @@
             case 2:
             {
                 AboutViewController *aboutVC = [[AboutViewController alloc]init];
-            UINavigationController *abNav = [[UINavigationController alloc]initWithRootViewController:aboutVC];
-            [self presentViewController:abNav animated:YES completion:nil];
+//            UINavigationController *abNav = [[UINavigationController alloc]initWithRootViewController:aboutVC];
+//            [self presentViewController:abNav animated:YES completion:nil];
+                [self.navigationController pushViewController:aboutVC animated:YES];
             }
                 break;
                 

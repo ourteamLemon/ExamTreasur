@@ -7,6 +7,7 @@
 //
 
 #import "ReadAndWrite.h"
+#define PLISTNAME    @"/examplist.plist"
 @implementation ReadAndWrite
 -(id)init
 {
@@ -18,7 +19,7 @@
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
     NSString *plistPath1 = [paths objectAtIndex:0];
-    NSString *readPlistPath = [plistPath1 stringByAppendingString:@"/examplist.plist"];
+    NSString *readPlistPath = [plistPath1 stringByAppendingString:PLISTNAME];
     NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:readPlistPath];
     return  data;
 }
@@ -27,7 +28,7 @@
 {
     NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
     NSString *plistPath1 = [paths objectAtIndex:0];
-    NSString *readPlistPath = [plistPath1 stringByAppendingString:@"/examplist.plist"];
+    NSString *readPlistPath = [plistPath1 stringByAppendingString:PLISTNAME];
     NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:readPlistPath];
     if (!data) {
         data = [[NSMutableDictionary alloc]init];
@@ -55,11 +56,15 @@
 {
     NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
     NSString *plistPath1 = [paths objectAtIndex:0];
-    NSString *readPlistPath = [plistPath1 stringByAppendingString:@"/examplist.plist"];
+    NSString *readPlistPath = [plistPath1 stringByAppendingString:PLISTNAME];
     NSFileManager *fileManager = NSFileManager.new;
     if ([fileManager fileExistsAtPath:readPlistPath])
     {
-        [fileManager delegate];
+        if ([fileManager removeItemAtPath:readPlistPath error:nil] == YES)
+        {
+             NSLog(@"delete contents success");
+        } ;
+       
         return  YES;
     }
     return NO;

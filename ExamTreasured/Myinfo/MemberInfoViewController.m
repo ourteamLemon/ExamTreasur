@@ -93,6 +93,7 @@
     
     UILabel  *titleone = [[UILabel alloc]initWithFrame:CGRectMake(10, height, 200, 20)];
     titleone.text = @"您当前的积分：";
+    titleone.backgroundColor = [UIColor clearColor];
     [self.view addSubview:titleone];
     
     UIView  *lineview =[[UIView alloc]initWithFrame:CGRectMake(0, 0, titleone.frame.origin.y+titleone.frame.size.height + 20, 2)];

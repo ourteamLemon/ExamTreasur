@@ -36,6 +36,10 @@
     [self setNaviBackGroundWithImage:nav_background];
 
     [self initializationUI];
+    
+    
+    self.view.backgroundColor = [UIColor colorWithRed:232/255.0 green:232/255.0 blue:232/255.0 alpha:1];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -84,7 +88,7 @@
     aboutLabel.lineBreakMode = NSLineBreakByWordWrapping;
     aboutLabel.numberOfLines = 0;
     aboutLabel.font = [UIFont systemFontOfSize:14.0f];
-    aboutLabel.text = @"医考宝典\n\t医考宝典；包括医考宝典网以及医考宝典移动应用客户端，是由中华医学会相关专家进行协调组织，中国医师协会培训部、中国人民解放军第四军医大学、北京大学医学部、上海交通大学医学院等机构院校的名师教授倾力协助，并联合互联网精英共同打造的一款，针对医学教育培训所设计的专业学习助手软件。\n\t医考宝典，针对医师考试紧迫性强、专业性强等问题，在历时一年的时间里通过专业人员反复的征询测试，依托于医学考试专家组多年来对医考命题规律的透彻分析及对命题趋势的精准判断，以帮助考生实现海量知识的快速理解和高效复习。";
+    aboutLabel.text = @"医考宝典\n\t\t医考宝典；包括医考宝典网以及医考宝典移动应用客户端，是由中华医学会相关专家进行协调组织，中国医师协会培训部、中国人民解放军第四军医大学、北京大学医学部、上海交通大学医学院等机构院校的名师教授倾力协助，并联合互联网精英共同打造的一款，针对医学教育培训所设计的专业学习助手软件。\n\t\t医考宝典，针对医师考试紧迫性强、专业性强等问题，在历时一年的时间里通过专业人员反复的征询测试，依托于医学考试专家组多年来对医考命题规律的透彻分析及对命题趋势的精准判断，以帮助考生实现海量知识的快速理解和高效复习。";
     [self.view addSubview:aboutLabel];
     
     //版本号

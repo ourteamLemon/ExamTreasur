@@ -94,21 +94,25 @@
     UILabel *namelabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 5, 200, 25)];
     NSString  *nameStr = [[NSString alloc]initWithFormat:@"账号：%@",[dic objectForKey:@"" ]];
     namelabel.text = nameStr;
+    namelabel.backgroundColor = [UIColor clearColor];
     [infoview addSubview:namelabel];
     
     UILabel *nerolabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 30, 200, 25)];
     NSString  *nerolabelstr = [[NSString alloc]initWithFormat:@"昵称：%@",[dic objectForKey:@"" ]];
+    nerolabel.backgroundColor = [UIColor clearColor];
     nerolabel.text = nerolabelstr;
     [infoview addSubview:nerolabel];
     
     UILabel *phonenumb = [[UILabel alloc]initWithFrame:CGRectMake(20, 50, 200, 25)];
     NSString  *phonenumbstr = [[NSString alloc]initWithFormat:@"手机账号：%@",[dic objectForKey:@"" ]];
+    phonenumb.backgroundColor = [UIColor clearColor];
     phonenumb.text = phonenumbstr;
     [infoview addSubview:phonenumb];
     
     UILabel *emaillabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 80, 200, 25)];
     NSString  *emaillabelstr = [[NSString alloc]initWithFormat:@"常用邮箱：%@",[dic objectForKey:@"" ]];
     emaillabel.text = emaillabelstr;
+    emaillabel.backgroundColor = [UIColor clearColor];
     [infoview addSubview:emaillabel];
 
     infoview.layer.shadowColor = [[UIColor grayColor]CGColor];

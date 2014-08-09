@@ -90,8 +90,7 @@ static NSString  *cellIdenfiter = @"cell";
 // init  UIScrollerView
 - (void)initScrollView
 {
-    self.iScrollView = [[UIScrollView alloc]initWithFrame:self.view.frame];
-
+    self.iScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, 320, MAINSCREENHEIGHT)];
     [self.view addSubview:self.iScrollView];
 }
 
@@ -123,7 +122,7 @@ static NSString  *cellIdenfiter = @"cell";
 
 -(void)inittableView
 {
-    self.iTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, tableViewYheight, 320, 70*5) style:UITableViewStylePlain];
+    self.iTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, tableViewYheight -20, 320, 70*5) style:UITableViewStylePlain];
     self.iTableView.dataSource = self;
     self.iTableView.delegate = self;
     self.iTableView.scrollEnabled = NO;
@@ -142,7 +141,7 @@ static NSString  *cellIdenfiter = @"cell";
 {
     //key
     //zyid
-
+    hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSDictionary  *parmDic = [[NSDictionary alloc]initWithObjectsAndKeys:m_AppDelegate.zy_ID ,@"zyid" ,nil];
     MKNetworkOperation   *op  = [m_AppDelegate.networkEngineinstace getdata:parmDic path:RechargeListByZYID httpMethod:POST];
     [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
@@ -153,6 +152,10 @@ static NSString  *cellIdenfiter = @"cell";
         {
             NSArray *tempArray = [redic objectForKey:@"rechargeList"];
             [self processData:tempArray];
+        }
+        else
+        {
+            [hud hide:YES];
         }
     } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
         
@@ -179,6 +182,7 @@ static NSString  *cellIdenfiter = @"cell";
         [rechargeArray addObject:chargeist];
     }
     [self.iTableView reloadData];
+    [hud hide:YES];
 }
 
 #pragma mark tableViewDelegate
@@ -215,12 +219,24 @@ static NSString  *cellIdenfiter = @"cell";
         cell.PriceLable.text = priceString;
         return cell;
     }
+    
+    if (indexPath.row == 3)
+    {
+        cell.monthLabel.frame = CGRectMake(cell.monthLabel.frame.origin.x+11, cell.monthLabel.frame.origin.y, cell.monthLabel.frame.size.width, cell.monthLabel.frame.size.height);
+    }
     cell.PriceLable.text = priceString;
     cell.countLable.text = listCharge.monthCount;
     return cell;
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    NSLog(@"%d",indexPath.row);
+    
+    
+    
+}
 
 
 @end
