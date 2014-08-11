@@ -7,7 +7,7 @@
 //
 
 #import "MemberInfoViewController.h"
-
+#import  "BlockAlertView.h"
 @interface MemberInfoViewController ()
 
 @end
@@ -28,21 +28,41 @@
     [super viewDidLoad];
     [self initcontroller];
     [self setNavgation];
+  
     [self getDataSource];
     [self addNaviRightBtn];
 
     
 }
+
+
 - (void)setNavgation
 {
     self.view.backgroundColor = [UIColor colorWithRed:232/255.0 green:232/255.0 blue:232/255.0 alpha:1];
     [self addNaviLeftBtnWithImageName:@"back" andFrame:CGRectMake(0, 2,30,30) target:self action:@selector(backController)];
-    
-    
     [self setNaviTitle:@"会员中心"];
-    
     UIImage *nav_background = [UIImage imageNamed:@"navgation"];
     [self setNaviBackGroundWithImage:nav_background];
+    [self checkIslog];
+}
+
+
+- (void)checkIslog
+{
+    if (![m_AppDelegate isLog])
+    {
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提醒" message:@"登陆后才可以查看账号信息，是否现在登录" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [alertView show];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1)
+    {
+        [m_AppDelegate enterLoginView];
+    }
+    
 }
 - (void)backController
 {

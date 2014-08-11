@@ -33,23 +33,41 @@
 @synthesize username = _username;
 @synthesize yh_ID = _yh_ID;
 @synthesize UUidStr;
+@synthesize isLog;
 @synthesize ishaveAuthority;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window                 = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window                 = [[UIWindow alloc] initWithFrame:
+                                   [[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    self.networkEngineinstace   = [[NetworkEngine alloc]initWithHostName:HOST portNumber:PROT apiPath:nil customHeaderFields:nil];
+    self.networkEngineinstace   = [[NetworkEngine alloc]initWithHostName:HOST
+                                                              portNumber:PROT
+                                                                 apiPath:nil customHeaderFields:nil];
     
     [self assignmentAppvalue];
+    [self isAutoLogin];
     [self initththirdPart];
-    [self enterMianViewController];
+    [self checkVersion];
     [Crashlytics startWithAPIKey:@"0d408bcd977f800691e4f63493abf44da3adc9f9"];
     [self.window makeKeyAndVisible];
-    [self checkVersion];
+ 
      return YES;
 }
-
+/**
+ *  检查是否自动登陆
+ */
+-(void)isAutoLogin
+{
+    if (self.aotuLogin == NO)
+    {
+        [self enterLoginView];
+    }
+    else
+    {
+        [self enterMianViewController];
+    }
+}
 
 /***********设置第三方平台使用***********/
 -(void)initththirdPart
@@ -126,6 +144,7 @@
     leftVC = [[LeftViewController alloc]init];
     navleft = [[UINavigationController alloc]initWithRootViewController:leftVC];
     navleft.navigationBarHidden = YES;
+    
     //中间的选项
     middleVC = [[MiddleViewController alloc]init];
     UINavigationController *NavMiddleVC = [[UINavigationController alloc]initWithRootViewController:middleVC];
@@ -454,26 +473,26 @@
 //username = "\U50bb\U74dc";
 //"yh_id" = 39;
 
-#pragma 初始化值
+#pragma  mark 初始化相关值
 -(void)assignmentAppvalue
 {
-    ReadAndWrite  *read      = [[ReadAndWrite alloc]init];
+    ReadAndWrite  *read = [[ReadAndWrite alloc]init];
     NSMutableDictionary *dic = [read readPlistFile];
     if (dic)
     {
-        
         self.yh_ID = [[dic objectForKey:@"yh_id"]stringValue];
         self.login_ID = [dic objectForKey:@"login_id"];
         self.username = [dic objectForKey:@"username"];
+        self.aotuLogin = [[dic objectForKey:@"autologin"]boolValue];
+        
     }
     else
     {
         self.yh_ID    = [[NSString alloc]init];
         self.login_ID = [[NSString alloc]init];
         self.username = [[NSString alloc]init];
+        self.aotuLogin = NO;
     }
-  
-    
     if (![dic objectForKey:@"zy_id"])
     {
         self.zy_ID =   @"1";
@@ -482,10 +501,9 @@
     {
         self.zy_ID  = [dic objectForKey:@"zy_id"];
     }
-    
     self.savePwd   = NO;
     self.aotuLogin = NO;
-    UUidStr   = [self KeyChianItem];
+    UUidStr = [self KeyChianItem];
 }
 
 @end

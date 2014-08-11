@@ -247,14 +247,19 @@
     }
 }
 #pragma mark 获取数据
+//key:
+//ztdy_id
+//login_id
+//zy_id
+//yh_id
+//start
+//end
 - (void)getZTdata
 {
     NSString *str = [datadic objectForKey:@"ZTDY_ID"];
     MBProgressHUD  *hub = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSLog(@"%@",str);
-    NSDictionary  *pardic = [[NSDictionary alloc]initWithObjectsAndKeys:[datadic objectForKey:@"ZTDY_ID"],@"ztdy_id",m_AppDelegate.login_ID,@"login_id",m_AppDelegate.zy_ID,@"zy_id",nil];
-    
-    
+    NSDictionary  *pardic = [[NSDictionary alloc]initWithObjectsAndKeys:[datadic objectForKey:@"ZTDY_ID"],@"ztdy_id",m_AppDelegate.login_ID,@"login_id",m_AppDelegate.zy_ID,@"zy_id",m_AppDelegate.yh_ID,@"yh_id", nil];
     
     
     MKNetworkOperation  *op = [m_AppDelegate.networkEngineinstace getdata:pardic path:OVERYEARS_GETTOPICDETAIL httpMethod:POST];

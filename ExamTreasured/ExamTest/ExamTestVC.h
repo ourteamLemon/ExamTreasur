@@ -15,7 +15,6 @@
 @property (nonatomic,strong) UIView    *sectionView;
 @property (nonatomic,assign) int   gindex;
 - (id)initWithStyle:(UITableViewStyle)style  Dictinary:(NSDictionary*)dataDictory index:(int)index;
-
 -(void)disposeDictionary:(NSDictionary *)dataDictory;
 -(void)disposeDictionarychange:(int )index;
 -(void)initTableView;

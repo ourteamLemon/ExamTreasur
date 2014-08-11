@@ -55,10 +55,30 @@
     
     UIImage *nav_background = [UIImage imageNamed:@"navgation"];
     [self setNaviBackGroundWithImage:nav_background];
-    
     ReadAndWrite  *rw = [[ReadAndWrite alloc]init];
     NSDictionary  *readdic = [rw  readPlistFile];
     [self initController:readdic];
+    [self checkIslog];
+    
+}
+
+- (void)checkIslog
+{
+    NSLog(@"%d",(((AppDelegate*)[UIApplication sharedApplication].delegate)).isLog);
+
+    if (![m_AppDelegate isLog])
+    {
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提醒" message:@"登陆后才可以查看个人信息，是否现在登录" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [alertView show];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1)
+    {
+        [m_AppDelegate enterLoginView];
+    }
     
 }
 

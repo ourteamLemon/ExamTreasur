@@ -10,24 +10,27 @@
 #import "MZTimerLabel.h"
 @interface ExamTestViewController : UIViewController<UIScrollViewDelegate,MZTimerLabelDelegate>
 {
-    int   gindex;
-    int   startpage;
-    
+ 
+    MZTimerLabel    *_timerExample;
     NSMutableArray  *dataArray;
     NSMutableArray  *ArraywithTV;
     NSTimer         *timer;
-
-    NSMutableArray  *bigarray;   //最大的数组
-    int  currentPageNumber;
-    MZTimerLabel *_timerExample;
+    //最大的数组
+    NSMutableArray  *bigarray;
     //保存着的数据
     NSMutableArray  *answercardArray;
+    
+    int   gindex;
+    int   startpage;
+    int  currentPageNumber;
+    int  startAnswer;
+    int  endAnswer;
 }
 
 @property (nonatomic,strong) NSDictionary *datadic;
 @property (nonatomic,strong) UIScrollView *iScrollview;
-
 @property (nonatomic,strong) UIView  *tabbarView;
+
 - (id)initWithDictionary:(NSDictionary *)dic index:(int)index;
 - (void)initScrollView;
 - (void)setNavgation;
@@ -37,12 +40,10 @@
 - (void)setlabel;
 - (void)initNSnotification;
 - (void)backController;
-
--(void)initA1 :(int) index;
+- (void)initA1 :(int) index;
 - (void)initExaminationQuestions;
--(void)uploadtopic:(NSNotification *)info;
+- (void)uploadtopic:(NSNotification *)info;
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView;
 - (void)setScrollviewContentSize;
--(void)initanswerArray :(int)count;
-- (void)setlabel;
+- (void)initanswerArray :(int)count;
 @end

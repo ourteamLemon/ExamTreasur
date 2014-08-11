@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MemberInfoViewController : UIViewController
+@interface MemberInfoViewController : UIViewController<UIAlertViewDelegate>
 
 @end

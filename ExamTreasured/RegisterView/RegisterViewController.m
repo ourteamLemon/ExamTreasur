@@ -200,8 +200,8 @@
 //    UITableViewCell  *cell = [tableView  dequeueReusableCellWithIdentifier:identifier];
 
      UITableViewCell*  cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-        cell.backgroundView.backgroundColor = [UIColor redColor];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.backgroundView.backgroundColor = [UIColor redColor];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     UILabel *namelabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 5, 90, 30)];
     namelabel.textColor = [UIColor blackColor];
     namelabel.backgroundColor = [UIColor clearColor];

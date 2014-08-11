@@ -25,7 +25,6 @@
     MiddleViewController *middleVC;
     UINavigationController *navleft;
     NSArray *allProfession;
-    
     //保存密码
     BOOL _savePwd;
     //自动登录
@@ -34,7 +33,6 @@
     NSString *_yh_ID;
     NSString *_login_ID;
     NSString *_username;
-
     NSString *_zy_ID;
     NSDictionary *_zyDic;
 }
@@ -43,16 +41,10 @@
 @property (strong, nonatomic) NetworkEngine   *networkEngineinstace;
 @property (assign) BOOL savePwd;
 @property (assign) BOOL aotuLogin;
+@property (assign) BOOL isLog;
 /*!
- *   (
- {
- "IS_USE" = 1;
- "ZY_ID" = 1;
- "ZY_LX" = good;
- "ZY_MC" = "\U4e34\U5e8a\U6267\U4e1a\U533b\U5e08";
- "ZY_NF" = 2014;
- "ZY_XF" = 100;
- },
+ *(
+ {"IS_USE""ZY_ID" "ZY_LX""ZY_MC"  "ZY_NF" "ZY_XF"  })
  */
 @property (strong, nonatomic) NSArray *allProfession;
 //用户ID
@@ -65,16 +57,15 @@
 @property (strong, nonatomic) NSString *zy_ID;
 
 @property (strong, nonatomic) NSDictionary *zyDic;
-@property (strong, nonatomic) MiddleViewController *middleVC;
 
+@property (strong, nonatomic) MiddleViewController *middleVC;
 //uuid
 @property (strong, nonatomic) NSString  *UUidStr;
-
-
 /**
  *  是否有权限   1表示有
  */
 @property (strong, nonatomic) NSString  *ishaveAuthority;
+
 
 - (void)enterLoginView;
 - (void)enterMianViewController;

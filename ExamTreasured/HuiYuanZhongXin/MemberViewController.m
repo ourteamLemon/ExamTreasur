@@ -12,9 +12,7 @@
 #import "PersonalInformationViewController.h"
 #import "HelpCenterViewController.h"
 @interface MemberViewController ()
-
 @end
-
 @implementation MemberViewController
 @synthesize iTableView;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -71,7 +69,6 @@
     }
     return self;
 }
-
 
 - (void)initiTableView
 {
@@ -220,7 +217,6 @@
         switch (indexPath.row) {
             case 0:
                 {
-                    
                 }
                 break;
             case 1:

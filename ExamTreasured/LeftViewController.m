@@ -200,6 +200,7 @@
     m_AppDelegate.login_ID = @"";
     m_AppDelegate.yh_ID = @"";
     m_AppDelegate.username = @"";
+    m_AppDelegate.isLog = NO;
     [self initController];
     ReadAndWrite  *rdwr = [[ReadAndWrite alloc]init];
     if ([rdwr deleteDocument])
