@@ -413,7 +413,8 @@
                 
                 [op addCompletionHandler:^(MKNetworkOperation *completedOperation)
                  {
-                     NSMutableDictionary *dic = [completedOperation responseJSON];
+                     NSDictionary *dic = [completedOperation responseJSON];
+                     NSMutableDictionary *writedic = [dic mutableCopy];
                      NSLog(@"%@",[dic objectForKey:@"message"]);
                      if ([dic allKeys].count>2 )
                      {
@@ -425,10 +426,11 @@
                          m_AppDelegate.login_ID = [dic objectForKey:@"login_id"];
                          m_AppDelegate.isLog = YES;
                          NSNumber  *numobj = [NSNumber numberWithBool:m_AppDelegate.aotuLogin];
-                         [dic setObject:numobj forKey:@"autologin"];
+                         [writedic setObject:numobj forKey:@"autologin"];
+                         
                          ReadAndWrite  *rdwr = [[ReadAndWrite alloc]init];
                          [rdwr deleteDocument];
-                         [rdwr writePlistFile:dic];
+                         [rdwr writePlistFile:writedic];
                          //需要做一步检查权限
                          [self checkUserAuthority];
                       
