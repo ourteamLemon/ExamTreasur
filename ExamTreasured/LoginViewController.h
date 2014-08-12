@@ -13,7 +13,13 @@
     UITextField *_pwdTextField;
     UIButton *returnBtn;
     int     loginemum;
+    UIButton *savePwdBtn;
 }
 @property(nonatomic,strong) UITextField *nameTextField;
 @property(nonatomic,strong) UITextField *pwdTextField;
+
+/**
+ *  INIT TEXTFIELD
+ */
+-(void)checkRememberPassword;
 @end

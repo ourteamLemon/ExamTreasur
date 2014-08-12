@@ -45,7 +45,7 @@
                                                               portNumber:PROT
                                                                  apiPath:nil customHeaderFields:nil];
     
-    [self assignmentAppvalue];
+    [self assignmentzyid];
     [self isAutoLogin];
     [self initththirdPart];
     [self checkVersion];
@@ -59,12 +59,15 @@
  */
 -(void)isAutoLogin
 {
+ 
+  
     if (self.aotuLogin == NO)
     {
         [self enterLoginView];
     }
     else
     {
+        [self assignmentAppvalue];
         [self enterMianViewController];
     }
 }
@@ -174,6 +177,9 @@
     
     
     LoginViewController *loginVC = [[LoginViewController alloc]init];
+//    判断是否有值
+    
+    
     UINavigationController  *Navlogin = [[UINavigationController alloc]initWithRootViewController:loginVC];
     self.window.rootViewController = Navlogin;
 }
@@ -474,6 +480,22 @@
 //"yh_id" = 39;
 
 #pragma  mark 初始化相关值
+
+-(void)assignmentzyid
+{
+    ReadAndWrite  *read = [[ReadAndWrite alloc]init];
+    NSMutableDictionary *dic = [read readPlistFile];
+    if (![dic objectForKey:@"zy_id"])
+    {
+        self.zy_ID = @"1";
+    }
+    else
+    {
+        self.zy_ID  = [dic objectForKey:@"zy_id"];
+    }
+    self.aotuLogin = [[dic objectForKey:AUTOLOGIN]boolValue];
+}
+
 -(void)assignmentAppvalue
 {
     ReadAndWrite  *read = [[ReadAndWrite alloc]init];
@@ -483,7 +505,9 @@
         self.yh_ID = [[dic objectForKey:@"yh_id"]stringValue];
         self.login_ID = [dic objectForKey:@"login_id"];
         self.username = [dic objectForKey:@"username"];
-        self.aotuLogin = [[dic objectForKey:@"autologin"]boolValue];
+        self.savePwd = [[dic objectForKey:SAVEPASSWORD]boolValue];
+        self.aotuLogin = [[dic objectForKey:AUTOLOGIN]boolValue];
+        self.ishaveAuthority = [[dic objectForKey:IS_HAVE]boolValue];
         
     }
     else
@@ -492,17 +516,8 @@
         self.login_ID = [[NSString alloc]init];
         self.username = [[NSString alloc]init];
         self.aotuLogin = NO;
+        self.savePwd = NO;
     }
-    if (![dic objectForKey:@"zy_id"])
-    {
-        self.zy_ID =   @"1";
-    }
-    else
-    {
-        self.zy_ID  = [dic objectForKey:@"zy_id"];
-    }
-    self.savePwd   = NO;
-    self.aotuLogin = NO;
     UUidStr = [self KeyChianItem];
 }
 

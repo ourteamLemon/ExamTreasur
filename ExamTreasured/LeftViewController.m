@@ -10,7 +10,6 @@
 #import "LeftViewController.h"
 @interface LeftViewController ()
 @end
-
 @implementation LeftViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -101,7 +100,7 @@
     [logView addSubview:selectJobLabel];
     
     //主view
-    rect1 = CGRectMake(0, rect1.origin.y+rect1.size.height, 320, MAINSCREEDN.size.height-rect1.origin.y-rect1.size.height);
+    rect1 = CGRectMake(0, rect1.origin.y+rect1.size.height, 320, MAINSCREENRECT.size.height-rect1.origin.y-rect1.size.height);
     mainView = [[UIView alloc]initWithFrame:rect1];
     mainView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:mainView];
@@ -152,7 +151,7 @@
         [mainView addSubview:line1];
         
         
-#pragma  mark Crash
+#pragma  mark  Crash
         if ([m_AppDelegate.zy_ID isEqualToString:[[iArray objectAtIndex:i] objectForKey:@"ZY_ID"]]) {
             [selectJob1 setBackgroundColor:[UIColor colorWithRed:90/255.0 green:90/255.0 blue:90/255.0 alpha:0.3f]];
         }

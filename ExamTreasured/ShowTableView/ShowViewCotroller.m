@@ -45,7 +45,7 @@
     else{
         tempH = 44;
     }
-    treeRect = CGRectMake(0, 0, 320, self.view.frame.size.height-tempH);
+    treeRect = CGRectMake(0, 0, 320, self.view.frame.size.height - tempH);
     
     treeView = [[RATreeView alloc] initWithFrame:treeRect];
     treeView.delegate = self;

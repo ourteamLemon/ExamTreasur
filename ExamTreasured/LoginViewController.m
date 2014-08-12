@@ -5,8 +5,6 @@
 //  Created by mac on 14-5-10.
 //  Copyright (c) 2014年 mac. All rights reserved.
 //
-
-
 #define i2s(s) [NSString stringWithFormat:@"%d", s]
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
@@ -54,6 +52,7 @@
     [self initializationTextView];
     [self initializationAotuLoginBtn];
     [self initializationFreeBtn];
+    [self checkRememberPassword];
 }
 - (void)initializationBackBtn
 {
@@ -130,12 +129,12 @@
     //保存密码
     rect = CGRectMake(0, 0, 25, 28);
     point = CGPointMake(65, 200);
-    UIButton *savePwdBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    savePwdBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     savePwdBtn.frame = rect;
     savePwdBtn.center = point;
     [savePwdBtn setBackgroundImage:[UIImage imageNamed:@"unselect.png"] forState:UIControlStateNormal];
     [savePwdBtn addTarget:self action:@selector(btnPressed:) forControlEvents:UIControlEventTouchUpInside];
-    savePwdBtn.tag = 0;
+    savePwdBtn.tag = 120;
     [self.view addSubview:savePwdBtn];
     
     rect = CGRectMake(0, 0, 80, 28);
@@ -354,7 +353,6 @@
     [self addNaviLeftBtnWithImageName:@"back" andFrame:CGRectMake(0, 2,30,30) target:self action:@selector(backController)];
     
     [self setNaviTitle:@"登陆"];
-    
     UIImage *nav_background = [UIImage imageNamed:@"navgation"];
     [self setNaviBackGroundWithImage:nav_background];
 }
@@ -375,7 +373,7 @@
 {
     UIButton *tempBtn = (UIButton*)sender;
     switch (tempBtn.tag) {
-        case 0:
+        case 120:
         {
             m_AppDelegate.savePwd = !m_AppDelegate.savePwd;
             if (m_AppDelegate.savePwd) {
@@ -421,12 +419,17 @@
                          NSString *returnStr = [dic objectForKey:@"message"];
                          [self showMBProgressHUDByString:returnStr];
                          
-                         m_AppDelegate.yh_ID = [dic objectForKey:@"yh_id"];
-                         m_AppDelegate.username = [dic objectForKey:@"username"];
-                         m_AppDelegate.login_ID = [dic objectForKey:@"login_id"];
+                         m_AppDelegate.yh_ID = [dic objectForKey:YH_ID];
+                         m_AppDelegate.username = [dic objectForKey:USERNAME];
+                         m_AppDelegate.login_ID = [dic objectForKey:LOGIN_ID];
                          m_AppDelegate.isLog = YES;
-                         NSNumber  *numobj = [NSNumber numberWithBool:m_AppDelegate.aotuLogin];
-                         [writedic setObject:numobj forKey:@"autologin"];
+                         NSNumber  *autologinFlag = [NSNumber numberWithBool:m_AppDelegate.aotuLogin];
+                         [writedic setObject:autologinFlag forKey:AUTOLOGIN];
+                        
+                         NSNumber  *remberPassword = [NSNumber numberWithBool:m_AppDelegate.savePwd];
+                         [writedic setObject:remberPassword forKey:SAVEPASSWORD];
+                         
+                         [writedic setObject:self.pwdTextField.text   forKey:PASSWORD];
                          
                          ReadAndWrite  *rdwr = [[ReadAndWrite alloc]init];
                          [rdwr deleteDocument];
@@ -459,9 +462,7 @@
     if ([_pwdTextField isFirstResponder])
     {
         [_pwdTextField resignFirstResponder];
-//        [self registeredAction];  登陆操作
     }
-    
     if ([_nameTextField isFirstResponder])
     {
         [_pwdTextField becomeFirstResponder];
@@ -701,18 +702,47 @@
     [op addCompletionHandler:^(MKNetworkOperation *completedOperation) {
         NSDictionary *resultDic = [completedOperation responseJSON];
         
-        if ([resultDic objectForKey:@"isHave"])
+        if ([resultDic objectForKey:IS_HAVE])
         {
-            m_AppDelegate.ishaveAuthority = [resultDic objectForKey:@"isHave"];
-        }else
+            m_AppDelegate.ishaveAuthority = [[resultDic objectForKey:IS_HAVE]boolValue];
+            
+            NSNumber  *ishaveAuthority = [NSNumber numberWithBool:m_AppDelegate.ishaveAuthority];
+            ReadAndWrite  *readWridte = [[ReadAndWrite alloc]init];
+            NSMutableDictionary *readdic = [readWridte readPlistFile];
+            [readdic setObject:ishaveAuthority forKey:IS_HAVE];
+            [readWridte writePlistFile:readdic];
+
+        }
+        else
         {
+            
         }
         [self backController];
-
     } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
         NSLog(@"%@",error);
-        
     }];
-     
+}
+
+-(void)checkRememberPassword
+{
+    ReadAndWrite  *read = [[ReadAndWrite alloc]init];
+    NSMutableDictionary *dictionary = [read readPlistFile];
+    if (!dictionary )
+    {
+        return;
+    }
+    
+    self.nameTextField.text = [dictionary objectForKey:KEY_ACCOUNT];
+  
+    if ([[dictionary objectForKey:SAVEPASSWORD]boolValue] == YES)
+    {
+               //写密码  lys
+        m_AppDelegate.savePwd = [[dictionary objectForKey:SAVEPASSWORD]boolValue];
+        self.pwdTextField.text = [dictionary objectForKey:PASSWORD];
+        UIButton  *btn = (UIButton *)[self.view viewWithTag:120];
+        [btn setImage:[UIImage imageNamed:@"select"] forState:UIControlStateNormal];
+    }
+    
+    return  ;
 }
 @end

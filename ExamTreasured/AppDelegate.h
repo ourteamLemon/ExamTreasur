@@ -20,9 +20,9 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate,UIAlertViewDelegate>
 {
     MMDrawerController *drawerController;
-    
     LeftViewController *leftVC;
     MiddleViewController *middleVC;
+    Reachability  *ok;
     UINavigationController *navleft;
     NSArray *allProfession;
     //保存密码
@@ -42,6 +42,11 @@
 @property (assign) BOOL savePwd;
 @property (assign) BOOL aotuLogin;
 @property (assign) BOOL isLog;
+/**
+ *  是否有权限   1表示有
+ */
+@property (assign, nonatomic) BOOL  ishaveAuthority;
+
 /*!
  *(
  {"IS_USE""ZY_ID" "ZY_LX""ZY_MC"  "ZY_NF" "ZY_XF"  })
@@ -61,10 +66,7 @@
 @property (strong, nonatomic) MiddleViewController *middleVC;
 //uuid
 @property (strong, nonatomic) NSString  *UUidStr;
-/**
- *  是否有权限   1表示有
- */
-@property (strong, nonatomic) NSString  *ishaveAuthority;
+
 
 
 - (void)enterLoginView;
@@ -74,7 +76,7 @@
 /** 壓縮到指定的尺寸，可能會有空白 */
 + (UIImage *) miniImage: (UIImage *)image maxSize:(CGSize)maxSize;
 - (UIImage *) loadWebImage:(NSString*)urlStr;
-- (UIImage *)formartForName:(NSString*)sName;
+- (UIImage *) formartForName:(NSString*)sName;
 
 - (void)customShareMenuClickHandler:(UIButton *)sender;
 - (NSString *)KeyChianItem;

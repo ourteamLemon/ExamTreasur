@@ -22,7 +22,9 @@
     
     int   gindex;
     int   startpage;
-    int  currentPageNumber;
+    int   currentPageNumber;
+    
+    //开始题目
     int  startAnswer;
     int  endAnswer;
 }

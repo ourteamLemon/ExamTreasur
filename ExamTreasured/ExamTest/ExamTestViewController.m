@@ -152,7 +152,7 @@
 #pragma  mark 初始化tabbar
 - (void)inittabbarView
 {
-    self.tabbarView = [[UIView alloc]initWithFrame:CGRectMake(0, MAINSCREEDN.size.height-20-44-44, 320, 44)];
+    self.tabbarView = [[UIView alloc]initWithFrame:CGRectMake(0, MAINSCREENRECT.size.height-20-44-44, 320, 44)];
     self.tabbarView.backgroundColor = [UIColor blueColor];
     
     [self initTabbarBtn:CGRectMake(0, 0, 20, 20)
@@ -259,9 +259,7 @@
     NSString *str = [datadic objectForKey:@"ZTDY_ID"];
     MBProgressHUD  *hub = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSLog(@"%@",str);
-    NSDictionary  *pardic = [[NSDictionary alloc]initWithObjectsAndKeys:[datadic objectForKey:@"ZTDY_ID"],@"ztdy_id",m_AppDelegate.login_ID,@"login_id",m_AppDelegate.zy_ID,@"zy_id",m_AppDelegate.yh_ID,@"yh_id", nil];
-    
-    
+    NSDictionary  *pardic = [[NSDictionary alloc]initWithObjectsAndKeys:[datadic objectForKey:@"ZTDY_ID"],@"ztdy_id",m_AppDelegate.login_ID,@"login_id",m_AppDelegate.zy_ID,@"zy_id",m_AppDelegate.yh_ID,@"yh_id", @"0",@"start",@"130" ,@"end",nil];
     MKNetworkOperation  *op = [m_AppDelegate.networkEngineinstace getdata:pardic path:OVERYEARS_GETTOPICDETAIL httpMethod:POST];
     [op addCompletionHandler:^(MKNetworkOperation *completedOperation)
      {
@@ -287,7 +285,7 @@
      }];
 }
 
-//initA1类型
+#pragma mark  initA1类型
 -(void)initA1 :(int) index
 {
     int arrarycount = [[[bigarray objectAtIndex:index]objectForKey:@"list"] count];
@@ -308,8 +306,16 @@
    
     }
 }
+#pragma mark  B1类型
+-(void)createB1:(int )index
+{
+    
+}
 
-
+-(void)createA3A4:(int )index
+{
+    
+}
 
 #pragma mark 初始化tableview
 - (void)initExaminationQuestions
@@ -321,12 +327,18 @@
         {
             [self initA1:big];
         }
-        else
+        else if([[[bigarray objectAtIndex:big]objectForKey:@"topictype"]isEqualToString:@"B1"])
         {
-            
+            [self createB1:big];
+        }
+        else if([[[bigarray objectAtIndex:big]objectForKey:@"topictype"]isEqualToString:@"A3/A4"])
+        {
+            [self createA3A4:big];
         }
     }
 }
+
+
 
 -(void)uploadtopic:(NSNotification *)info
 {

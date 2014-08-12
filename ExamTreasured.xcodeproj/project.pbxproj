@@ -215,6 +215,8 @@
 		0492B5FA1982840700119D6A /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0492B5F91982840700119D6A /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0493CAE8198FDCD50004726F /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 0493CAE7198FDCD50004726F /* NSString+MD5.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0495082519914DCF0017C87B /* ShoppingCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0495082419914DCF0017C87B /* ShoppingCartViewController.m */; };
+		04AAC7FE199A6EF000E08898 /* CreateB1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AAC7FD199A6EF000E08898 /* CreateB1ViewController.m */; };
+		04AAC802199A6F2100E08898 /* CreateA3A4VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AAC801199A6F2100E08898 /* CreateA3A4VC.m */; };
 		04C592DC1934DFD900B9EE72 /* ExamTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C592DB1934DFD900B9EE72 /* ExamTestViewController.m */; };
 		04C592DF1934E9DA00B9EE72 /* ExamData.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C592DE1934E9DA00B9EE72 /* ExamData.m */; };
 		04C592E319350DD900B9EE72 /* ZhangjieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C592E219350DD900B9EE72 /* ZhangjieViewController.m */; };
@@ -698,6 +700,10 @@
 		0493CAE7198FDCD50004726F /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		0495082319914DCF0017C87B /* ShoppingCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartViewController.h; sourceTree = "<group>"; };
 		0495082419914DCF0017C87B /* ShoppingCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartViewController.m; sourceTree = "<group>"; };
+		04AAC7FC199A6EF000E08898 /* CreateB1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateB1ViewController.h; sourceTree = "<group>"; };
+		04AAC7FD199A6EF000E08898 /* CreateB1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateB1ViewController.m; sourceTree = "<group>"; };
+		04AAC800199A6F2100E08898 /* CreateA3A4VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateA3A4VC.h; sourceTree = "<group>"; };
+		04AAC801199A6F2100E08898 /* CreateA3A4VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateA3A4VC.m; sourceTree = "<group>"; };
 		04C592DA1934DFD900B9EE72 /* ExamTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamTestViewController.h; sourceTree = "<group>"; };
 		04C592DB1934DFD900B9EE72 /* ExamTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamTestViewController.m; sourceTree = "<group>"; };
 		04C592DD1934E9DA00B9EE72 /* ExamData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamData.h; sourceTree = "<group>"; };
@@ -1500,6 +1506,8 @@
 		0442BD47192A534600C3D6EB /* ShowTableView */ = {
 			isa = PBXGroup;
 			children = (
+				04AAC7FF199A6F0F00E08898 /* CreateA3A4 */,
+				04AAC7FB199A6ED900E08898 /* CreateB1 */,
 				0442737F196D3902006CFFF9 /* ExamCell */,
 				0442737B196D34F0006CFFF9 /* answerCard */,
 				04C592D91934DFD900B9EE72 /* ExamTest */,
@@ -1737,6 +1745,24 @@
 				0493CAE7198FDCD50004726F /* NSString+MD5.m */,
 			);
 			path = "NSString+MD5";
+			sourceTree = "<group>";
+		};
+		04AAC7FB199A6ED900E08898 /* CreateB1 */ = {
+			isa = PBXGroup;
+			children = (
+				04AAC7FC199A6EF000E08898 /* CreateB1ViewController.h */,
+				04AAC7FD199A6EF000E08898 /* CreateB1ViewController.m */,
+			);
+			path = CreateB1;
+			sourceTree = "<group>";
+		};
+		04AAC7FF199A6F0F00E08898 /* CreateA3A4 */ = {
+			isa = PBXGroup;
+			children = (
+				04AAC800199A6F2100E08898 /* CreateA3A4VC.h */,
+				04AAC801199A6F2100E08898 /* CreateA3A4VC.m */,
+			);
+			path = CreateA3A4;
 			sourceTree = "<group>";
 		};
 		04C592D91934DFD900B9EE72 /* ExamTest */ = {
@@ -2643,6 +2669,7 @@
 				04FE7C8F191E873C00DC77D8 /* UIImageView+MKNetworkKitAdditions.m in Sources */,
 				0468EF72195738DB00BA7B0A /* SBJsonWriter.m in Sources */,
 				0466263D191F49E50005F706 /* MMDrawerController.m in Sources */,
+				04AAC802199A6F2100E08898 /* CreateA3A4VC.m in Sources */,
 				8C9140D1193DB6E70033962E /* YunBiJiViewController.m in Sources */,
 				04FE7C9D191E873C00DC77D8 /* UIImage+GIF.m in Sources */,
 				04FE7C9C191E873C00DC77D8 /* UIButton+WebCache.m in Sources */,
@@ -2670,6 +2697,7 @@
 				0442BD61192A70BA00C3D6EB /* RATreeNodeCollectionController.m in Sources */,
 				045BD94D196B00E400923F53 /* ExamTestVC.m in Sources */,
 				04FE7C92191E873C00DC77D8 /* Reachability.m in Sources */,
+				04AAC7FE199A6EF000E08898 /* CreateB1ViewController.m in Sources */,
 				0442BD60192A70BA00C3D6EB /* RATreeNode.m in Sources */,
 				04FE7C4C191DFB9900DC77D8 /* LoginViewController.m in Sources */,
 				04FE7C99191E873C00DC77D8 /* SDWebImageDownloaderOperation.m in Sources */,
