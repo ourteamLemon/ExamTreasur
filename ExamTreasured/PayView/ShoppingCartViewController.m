@@ -14,7 +14,6 @@
 @end
 
 @interface ShoppingCartViewController ()
-
 @end
 
 @implementation ShoppingCartViewController
@@ -232,11 +231,33 @@ static NSString  *cellIdenfiter = @"cell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    NSLog(@"%d",indexPath.row);
+}
+
+-(void)createDetailView
+{
+    UIView  *detailview = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 300, 280)];
+    detailview.backgroundColor  = [UIColor whiteColor];
+    //画行
+    for (int rowindex = 0; rowindex < 7; rowindex++)
+    {
+        UIImageView  *imgview = [[UIImageView alloc]initWithFrame:CGRectMake(10, (rowindex+1)*40, 300, 2)];
+        imgview.tintColor = [UIColor grayColor];
+        [detailview addSubview:imgview];
+    }
+    
+    //画列
+    for (int columnindex = 0 ; columnindex < 2; columnindex++)
+    {
+        UIImageView  *imgview = [[UIImageView alloc]initWithFrame:CGRectMake((columnindex+1)*100, 0, 2, 280)];
+        imgview.tintColor = [UIColor grayColor];
+        [detailview addSubview:imgview];
+    }
+    
+    
+
     
     
     
 }
-
 
 @end

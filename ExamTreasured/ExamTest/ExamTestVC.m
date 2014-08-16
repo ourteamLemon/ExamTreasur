@@ -194,7 +194,16 @@ NSString *cellidentifier = @"cell";
     
     UIFont *cellFont = [UIFont fontWithName:@"Helvetica" size:17.0];
     CGSize constraintSize = CGSizeMake(290.0f, MAXFLOAT);
-    CGSize labelSize = [str  sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:NSLineBreakByWordWrapping];
+    CGSize labelSize;
+    if (!IOS7)
+    {
+      labelSize = [str  sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:NSLineBreakByWordWrapping];
+    }
+    else
+    {
+       
+
+    }
     
     return labelSize.height;
 }
@@ -244,15 +253,18 @@ NSString *cellidentifier = @"cell";
         UIView  *sectionOne = [[UIView alloc]init];
         UILabel  *titlelabel = [[UILabel alloc]init];
         titlelabel.numberOfLines = 0;
+        titlelabel.font = [UIFont systemFontOfSize:14];
         titlelabel.text = [dic objectForKey:@"TM_TG"];
         titlelabel.backgroundColor = [UIColor clearColor];
         [sectionOne addSubview:titlelabel];
         CGSize  labelSize;
-        if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
-            
-            labelSize = [[dic objectForKey:@"TM_TG"] boundingRectWithSize:CGSizeMake(300, 500)  options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size;
+        if (IOS7)
+        {
+            NSDictionary * tdic = [NSDictionary dictionaryWithObjectsAndKeys:titlelabel.font,NSFontAttributeName,nil];
+            labelSize = [[dic objectForKey:@"TM_TG"] boundingRectWithSize:CGSizeMake(300, MAXFLOAT)  options:NSStringDrawingUsesLineFragmentOrigin attributes:tdic context:nil].size;
+        
         } else {
-            
+        
             UIFont *nameFont=[UIFont fontWithName:@"Helvetica" size:13];
             labelSize = [[dic objectForKey:@"TM_TG"] sizeWithFont:nameFont constrainedToSize:CGSizeMake(237, 200) lineBreakMode:NSLineBreakByCharWrapping];
         }
@@ -287,7 +299,6 @@ NSString *cellidentifier = @"cell";
         [self saveData:indexPath.row];
     } ;
     [[NSNotificationCenter defaultCenter]postNotificationName: UPLOADTOPIC object:nil userInfo:nil];
-    
     
 }
 
