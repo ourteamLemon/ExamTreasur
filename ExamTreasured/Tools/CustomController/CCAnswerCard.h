@@ -21,7 +21,7 @@
 //初始化
 - (id)initWithFrame:(CGRect)cRect count:(NSNumber*)cNumber;
 - (void)initbtnColor:(NSMutableArray *)array;
-- (id)initWithFrame:(CGRect)cRect Nsarray:(NSArray*)arrayAnswer;
+- (id)initWithFrame:(CGRect)cRect Nsarray:(NSArray*)arrayAnswer   downloadIndex:(int )index;
 
 - (void)setTager:(id)aTager andAction:(SEL)aAction;
 @end

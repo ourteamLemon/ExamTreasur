@@ -85,7 +85,7 @@
             break;
          case 207:
             {
-            AnswerCardViewController *answerVC = [[AnswerCardViewController alloc]initWithNibName:nil bundle:nil Nsarray:answercardArray];
+                AnswerCardViewController *answerVC = [[AnswerCardViewController alloc]initWithNibName:nil bundle:nil Nsarray:answercardArray downindex:(startAnswer+10)];
               UINavigationController  *navCard = [[UINavigationController alloc]initWithRootViewController:answerVC];
               [answerVC setTager:self andAction:@selector(btnPressed1:)];
               [self presentViewController:navCard animated:YES completion:nil];
@@ -193,13 +193,17 @@
 {
     [super didReceiveMemoryWarning];
 }
+
+#pragma mark 初始化方法
 - (id)initWithDictionary:(NSDictionary *)dic index:(int) index
 {
     datadic = [[NSDictionary alloc]initWithDictionary:dic];
     gindex = index;
     dataArray = [[NSMutableArray alloc]init];
     ArraywithTV = [[NSMutableArray alloc]init];
-
+    isNeedLoading = YES;
+    startAnswer  = 0;
+    lastTimesPage = 0;
     self = [super initWithNibName:nil  bundle:nil];
     if (self) {
         currentPageNumber = 0;
@@ -259,21 +263,36 @@
     NSString *str = [datadic objectForKey:@"ZTDY_ID"];
     MBProgressHUD  *hub = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSLog(@"%@",str);
-    NSDictionary  *pardic = [[NSDictionary alloc]initWithObjectsAndKeys:[datadic objectForKey:@"ZTDY_ID"],@"ztdy_id",m_AppDelegate.login_ID,@"login_id",m_AppDelegate.zy_ID,@"zy_id",m_AppDelegate.yh_ID,@"yh_id", @"0",@"start",@"130" ,@"end",nil];
+    NSString  *startStr  = [NSString stringWithFormat:@"%d",startAnswer];
+    NSString  *endStr = [NSString stringWithFormat:@"%d",startAnswer+10];
+    NSDictionary  *pardic = [[NSDictionary alloc]initWithObjectsAndKeys:[datadic objectForKey:@"ZTDY_ID"],@"ztdy_id",m_AppDelegate.login_ID,@"login_id",m_AppDelegate.zy_ID,@"zy_id",m_AppDelegate.yh_ID,@"yh_id",startStr ,@"start",endStr,@"end",nil];
     MKNetworkOperation  *op = [m_AppDelegate.networkEngineinstace getdata:pardic path:OVERYEARS_GETTOPICDETAIL httpMethod:POST];
     [op addCompletionHandler:^(MKNetworkOperation *completedOperation)
      {
          hub.hidden = YES;
          NSMutableDictionary  *dic = [completedOperation responseJSON];
          NSLog(@"%@",dic);
-         int    answerCount = [[dic objectForKey:@"count"]intValue];
+         int    answerCount = [[dic objectForKey:@"topiccount"]intValue];
+         
+         if (answerCount <= (startAnswer+10))
+         {
+             isNeedLoading = NO;
+         }
+         
          [self initanswerArray:answerCount];
+         
          bigarray = [dic objectForKey:@"topiclist"];
          NSArray  *seconTreeArray = [[bigarray objectAtIndex:0]objectForKey:@"list"];
-         [seconTreeArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop)
+//         [seconTreeArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop)
+//         {
+//             [dataArray addObject:obj];
+//         }];
+//         
+         for (int sectionIdex = 0; sectionIdex<seconTreeArray.count ; sectionIdex++)
          {
-             [dataArray addObject:obj];
-         }];
+             [dataArray addObject:seconTreeArray[sectionIdex]];
+         }
+         
          if (dataArray.count)
          {
              [self setScrollviewContentSize];
@@ -286,24 +305,25 @@
 }
 
 #pragma mark  initA1类型
--(void)initA1 :(int) index
+-(void)createA1 :(int) index
 {
     int arrarycount = [[[bigarray objectAtIndex:index]objectForKey:@"list"] count];
     NSArray  *dataArray1 = [[bigarray objectAtIndex:index]objectForKey:@"list"];
     for (int i = 0 ; i < arrarycount; i++)
     {
-        ExamTestVC *examTestVC = [[ExamTestVC alloc]initWithStyle:UITableViewStyleGrouped Dictinary:[dataArray1 objectAtIndex:i]  index:i];
-        [ArraywithTV addObject:examTestVC];
+        int tag = startAnswer + i;
+        ExamTestVC *examTestVC = [[ExamTestVC alloc]initWithStyle:UITableViewStyleGrouped Dictinary:[dataArray1 objectAtIndex:i]  index:tag];
+        
         if (IOS7)
         {
-            examTestVC.view.center = CGPointMake(320*i+160, MAINSCREENHEIGHT/2 + 15);
+            examTestVC.view.center = CGPointMake(320*tag+160, MAINSCREENHEIGHT/2 + 15);
         }
         else
         {
-            examTestVC.view.center = CGPointMake(320*i+160, MAINSCREENHEIGHT/2-10);
+            examTestVC.view.center = CGPointMake(320*tag+160, MAINSCREENHEIGHT/2-10);
         }
         [self.iScrollview addSubview:examTestVC.view];
-   
+        [ArraywithTV addObject:examTestVC];
     }
 }
 #pragma mark  B1类型
@@ -317,15 +337,38 @@
     
 }
 
+
+-(void)createA2 :(int) index
+{
+    NSLog(@"createA2");
+    
+    int arrarycount = [[[bigarray objectAtIndex:index]objectForKey:@"list"] count];
+    NSArray  *dataArray1 = [[bigarray objectAtIndex:index]objectForKey:@"list"];
+    for (int i = 0 ; i < arrarycount; i++)
+    {
+        ExamTestVC *examTestVC = [[ExamTestVC alloc]initWithStyle:UITableViewStyleGrouped Dictinary:[dataArray1 objectAtIndex:i]  index:i];
+        if (IOS7)
+        {
+            examTestVC.view.center = CGPointMake(320*i+160, MAINSCREENHEIGHT/2 + 15);
+        }
+        else
+        {
+            examTestVC.view.center = CGPointMake(320*i+160, MAINSCREENHEIGHT/2-10);
+        }
+        [self.iScrollview addSubview:examTestVC.view];
+        [ArraywithTV addObject:examTestVC];
+    }
+
+}
+
 #pragma mark 初始化tableview
 - (void)initExaminationQuestions
 {
-    
     for (int big = 0;big <bigarray.count ; big++)
     {
         if ([[[bigarray objectAtIndex:big] objectForKey:@"topictype"]  isEqualToString:@"A1"])
         {
-            [self initA1:big];
+            [self createA1:big];
         }
         else if([[[bigarray objectAtIndex:big]objectForKey:@"topictype"]isEqualToString:@"B1"])
         {
@@ -335,6 +378,10 @@
         {
             [self createA3A4:big];
         }
+        else if([[[bigarray objectAtIndex:big]objectForKey:@"topictype"]isEqualToString:@"A2"])
+        {
+            [self createA2:big];
+        }
     }
 }
 
@@ -342,7 +389,13 @@
 
 -(void)uploadtopic:(NSNotification *)info
 {
-    if(currentPageNumber+1 < dataArray.count)
+//    if(currentPageNumber+1  == ArraywithTV.count-2 && isNeedLoading == YES)
+//    {
+//        startAnswer = startAnswer +10;
+//        [self getZTdata];
+//    }
+//    else
+        if (currentPageNumber+1 < ArraywithTV.count)
     {
         currentPageNumber = currentPageNumber + 1;
         [self.iScrollview setContentOffset:CGPointMake(currentPageNumber*320, 0) animated:YES];
@@ -352,7 +405,32 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     
       currentPageNumber = scrollView.contentOffset.x/320;
+      NSLog(@"%d",currentPageNumber = scrollView.contentOffset.x/320);
 }
+
+//lys
+  
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    NSLog(@"%d",currentPageNumber = scrollView.contentOffset.x/320);
+  
+    if (lastTimesPage == currentPageNumber)
+    {
+        return;
+    }
+    else
+    {
+        lastTimesPage = currentPageNumber;
+    }
+    
+    
+    if(currentPageNumber+1  == ArraywithTV.count-2 && isNeedLoading == YES)
+    {
+        startAnswer = startAnswer +10;
+        [self getZTdata];
+    }
+}
+
 //倒计时
 -(void)setlabel
 {

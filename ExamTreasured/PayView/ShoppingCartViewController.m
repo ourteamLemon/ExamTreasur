@@ -39,6 +39,8 @@ static NSString  *cellIdenfiter = @"cell";
     [self initTableTitle];
     [self inittableView];
     [self getRechargeData];
+    
+    [self createDetailView];
 
 }
 // init tableTitle
@@ -61,12 +63,10 @@ static NSString  *cellIdenfiter = @"cell";
         }
     }
 
-
     UILabel  *rechargeLabble = [[UILabel alloc]initWithFrame:CGRectMake(5, tabletitle.frame.origin.y+tabletitle.frame.size.height+10, tabletitle.frame.size.width, 25)];
     rechargeLabble.text = showRechargeString;
     rechargeLabble.backgroundColor = [UIColor clearColor];
     [self.iScrollView addSubview:rechargeLabble];
-    
     
     tableViewYheight = tabletitle.frame.origin.y + tabletitle.frame.size.height +rechargeLabble.frame.origin.y+rechargeLabble.frame.size.height;
 }
@@ -84,7 +84,7 @@ static NSString  *cellIdenfiter = @"cell";
 }
 -(void)viewWillAppear:(BOOL)animated
 {
-    self.iScrollView.contentSize = CGSizeMake(320, 600);
+    self.iScrollView.contentSize = CGSizeMake(320, 455+230+tableViewYheight);
 }
 // init  UIScrollerView
 - (void)initScrollView
@@ -233,30 +233,24 @@ static NSString  *cellIdenfiter = @"cell";
     
 }
 
+
+//创建详细页面
 -(void)createDetailView
 {
-    UIView  *detailview = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 300, 280)];
-    detailview.backgroundColor  = [UIColor whiteColor];
-    //画行
-    for (int rowindex = 0; rowindex < 7; rowindex++)
-    {
-        UIImageView  *imgview = [[UIImageView alloc]initWithFrame:CGRectMake(10, (rowindex+1)*40, 300, 2)];
-        imgview.tintColor = [UIColor grayColor];
-        [detailview addSubview:imgview];
-    }
-    
-    //画列
-    for (int columnindex = 0 ; columnindex < 2; columnindex++)
-    {
-        UIImageView  *imgview = [[UIImageView alloc]initWithFrame:CGRectMake((columnindex+1)*100, 0, 2, 280)];
-        imgview.tintColor = [UIColor grayColor];
-        [detailview addSubview:imgview];
-    }
-    
-    
+    UIImageView  *detailImgView = [[UIImageView alloc]initWithFrame:CGRectMake(10, self.iTableView.frame.size.height+self.iTableView.frame.origin.y+10, 300 , 230)];
+    detailImgView.image = [UIImage imageNamed:@"member.jpg"];
+    [self.iScrollView addSubview:detailImgView];
+    UIView *noteView =   [self createNote];
+    noteView.frame = CGRectMake(0, detailImgView.frame.origin.y+detailImgView.frame.size.height+10, 320, 56) ;
+    [self.iScrollView addSubview:noteView];
+}
 
-    
-    
+- (UIView  *)createNote
+{
+    NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"note" owner:self options:nil];
+    //得到第一个UIView
+    UIView *tmpCustomView = [nib objectAtIndex:0];
+    return tmpCustomView;
     
 }
 

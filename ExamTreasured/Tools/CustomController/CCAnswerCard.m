@@ -38,7 +38,7 @@
     
 }
 
-- (id)initWithFrame:(CGRect)cRect Nsarray:(NSArray*)arrayAnswer
+- (id)initWithFrame:(CGRect)cRect Nsarray:(NSArray*)arrayAnswer   downloadIndex:(int )index
 {
     self = [super init];
     if (self) {
@@ -46,7 +46,7 @@
         self.view.frame = cRect;
 //        self.title = @"答题卡";
         _arrayAnswer = [[NSArray alloc]initWithArray:arrayAnswer];
-        [self initializationUIArray];
+        [self initializationUIArray :index];
     }
     return self;
     
@@ -140,8 +140,12 @@
 }
 
 
-
-- (void)initializationUIArray
+/**
+ *  已经下载好的
+ *
+ *  @param downloadOverindex 已经下载完成的个数
+ */
+- (void)initializationUIArray  :(int)downloadOverindex
 {
     UIScrollView *iScrollView = [[UIScrollView alloc]initWithFrame:self.view.frame];
     iScrollView.scrollEnabled = YES;
@@ -170,7 +174,16 @@
             NSDictionary  *dic = [_arrayAnswer objectAtIndex: tempBtn.tag - TAGCOUNT-1];
             if ([[dic objectForKey:@"answerstate"]isEqualToString:@"none"])
             {
-                [tempBtn setBackgroundColor:[UIColor grayColor]];
+                
+                if ((i*6+1+j) <= downloadOverindex)
+                {
+                    [tempBtn setBackgroundColor:[UIColor lightGrayColor]];//深色的
+                }
+                else
+                {
+                    [tempBtn setBackgroundColor:[UIColor  darkGrayColor]];//浅色的
+
+                }
                 
             }else if([[dic objectForKey:@"answerstate"]isEqualToString:@"right"])
             {

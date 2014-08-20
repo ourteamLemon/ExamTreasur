@@ -217,6 +217,13 @@
 		0495082519914DCF0017C87B /* ShoppingCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0495082419914DCF0017C87B /* ShoppingCartViewController.m */; };
 		04AAC7FE199A6EF000E08898 /* CreateB1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AAC7FD199A6EF000E08898 /* CreateB1ViewController.m */; };
 		04AAC802199A6F2100E08898 /* CreateA3A4VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AAC801199A6F2100E08898 /* CreateA3A4VC.m */; };
+		04BDEE4C199F2C0000AF9BCE /* member.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04BDEE4A199F2C0000AF9BCE /* member.jpg */; };
+		04BDEE4D199F2C0000AF9BCE /* member@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04BDEE4B199F2C0000AF9BCE /* member@2x.jpg */; };
+		04BDEE52199FB5C200AF9BCE /* hollow.png in Resources */ = {isa = PBXBuildFile; fileRef = 04BDEE4E199FB5C200AF9BCE /* hollow.png */; };
+		04BDEE53199FB5C200AF9BCE /* hollow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04BDEE4F199FB5C200AF9BCE /* hollow@2x.png */; };
+		04BDEE54199FB5C200AF9BCE /* solid.png in Resources */ = {isa = PBXBuildFile; fileRef = 04BDEE50199FB5C200AF9BCE /* solid.png */; };
+		04BDEE55199FB5C200AF9BCE /* solid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04BDEE51199FB5C200AF9BCE /* solid@2x.png */; };
+		04BDEE57199FD6DB00AF9BCE /* note.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BDEE56199FD6DB00AF9BCE /* note.xib */; };
 		04C592DC1934DFD900B9EE72 /* ExamTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C592DB1934DFD900B9EE72 /* ExamTestViewController.m */; };
 		04C592DF1934E9DA00B9EE72 /* ExamData.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C592DE1934E9DA00B9EE72 /* ExamData.m */; };
 		04C592E319350DD900B9EE72 /* ZhangjieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C592E219350DD900B9EE72 /* ZhangjieViewController.m */; };
@@ -704,6 +711,13 @@
 		04AAC7FD199A6EF000E08898 /* CreateB1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateB1ViewController.m; sourceTree = "<group>"; };
 		04AAC800199A6F2100E08898 /* CreateA3A4VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateA3A4VC.h; sourceTree = "<group>"; };
 		04AAC801199A6F2100E08898 /* CreateA3A4VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateA3A4VC.m; sourceTree = "<group>"; };
+		04BDEE4A199F2C0000AF9BCE /* member.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = member.jpg; sourceTree = "<group>"; };
+		04BDEE4B199F2C0000AF9BCE /* member@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "member@2x.jpg"; sourceTree = "<group>"; };
+		04BDEE4E199FB5C200AF9BCE /* hollow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hollow.png; sourceTree = "<group>"; };
+		04BDEE4F199FB5C200AF9BCE /* hollow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hollow@2x.png"; sourceTree = "<group>"; };
+		04BDEE50199FB5C200AF9BCE /* solid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = solid.png; sourceTree = "<group>"; };
+		04BDEE51199FB5C200AF9BCE /* solid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "solid@2x.png"; sourceTree = "<group>"; };
+		04BDEE56199FD6DB00AF9BCE /* note.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = note.xib; path = ../Images/Paypic/note.xib; sourceTree = "<group>"; };
 		04C592DA1934DFD900B9EE72 /* ExamTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamTestViewController.h; sourceTree = "<group>"; };
 		04C592DB1934DFD900B9EE72 /* ExamTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamTestViewController.m; sourceTree = "<group>"; };
 		04C592DD1934E9DA00B9EE72 /* ExamData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamData.h; sourceTree = "<group>"; };
@@ -1482,6 +1496,7 @@
 		0442BD3F1929C13700C3D6EB /* PayView */ = {
 			isa = PBXGroup;
 			children = (
+				04BDEE56199FD6DB00AF9BCE /* note.xib */,
 				0442BD401929C14200C3D6EB /* PayViewController.h */,
 				0442BD411929C14200C3D6EB /* PayViewController.m */,
 				8C7F9E17195D3D3200AA1CC6 /* PartnerConfig.h */,
@@ -1763,6 +1778,20 @@
 				04AAC801199A6F2100E08898 /* CreateA3A4VC.m */,
 			);
 			path = CreateA3A4;
+			sourceTree = "<group>";
+		};
+		04BDEE49199F2C0000AF9BCE /* Paypic */ = {
+			isa = PBXGroup;
+			children = (
+				04BDEE4E199FB5C200AF9BCE /* hollow.png */,
+				04BDEE4F199FB5C200AF9BCE /* hollow@2x.png */,
+				04BDEE50199FB5C200AF9BCE /* solid.png */,
+				04BDEE51199FB5C200AF9BCE /* solid@2x.png */,
+				04BDEE4A199F2C0000AF9BCE /* member.jpg */,
+				04BDEE4B199F2C0000AF9BCE /* member@2x.jpg */,
+			);
+			name = Paypic;
+			path = Images/Paypic;
 			sourceTree = "<group>";
 		};
 		04C592D91934DFD900B9EE72 /* ExamTest */ = {
@@ -2086,6 +2115,7 @@
 		8C0554371920B821003F3AA6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				04BDEE49199F2C0000AF9BCE /* Paypic */,
 				8C27C5C3195124A4006F927E /* ShoucPic */,
 				0431C3C51950BA120057C72B /* YunBiji */,
 				04D1228F193DBE7300BBC6A8 /* ExamTablePic */,
@@ -2368,7 +2398,9 @@
 				8C27C5DE195124A4006F927E /* sc_gl_h.png in Resources */,
 				8C27C5DF195124A4006F927E /* sc_gl_h@2x.png in Resources */,
 				8CB9640D1945584F0074A3C9 /* sysmain_mnks4.png in Resources */,
+				04BDEE54199FB5C200AF9BCE /* solid.png in Resources */,
 				B0614603192A533E00B8C7E4 /* sysmain_kqcc.png in Resources */,
+				04BDEE52199FB5C200AF9BCE /* hollow.png in Resources */,
 				8CB963F3194555330074A3C9 /* sysmain_fxbj_h4@2x.png in Resources */,
 				0442BD211927910B00C3D6EB /* Icons-（58x58）.png in Resources */,
 				0462F1EC194FDFAB00EB661E /* analysisselect.png in Resources */,
@@ -2400,6 +2432,7 @@
 				8C27C5E2195124A4006F927E /* sc_st_h.png in Resources */,
 				8CBB280A1929F2CE00A41B8B /* renren_logo@2x.png in Resources */,
 				041B28AE1966451A00FD4E0B /* alert-black-button@2x.png in Resources */,
+				04BDEE4C199F2C0000AF9BCE /* member.jpg in Resources */,
 				041B28A21966451A00FD4E0B /* action-black-button@2x.png in Resources */,
 				B0614613192A64A900B8C7E4 /* sysmain_fav.png in Resources */,
 				8CB964391945ABC20074A3C9 /* button_press9@2x.png in Resources */,
@@ -2455,6 +2488,7 @@
 				04FE7C26191DF6A300DC77D8 /* InfoPlist.strings in Resources */,
 				0462F1FC1950B99F00EB661E /* answerselect.png in Resources */,
 				8CB963F1194555330074A3C9 /* sysmain_fxbj_h@2x.png in Resources */,
+				04BDEE53199FB5C200AF9BCE /* hollow@2x.png in Resources */,
 				8CB96435194593D30074A3C9 /* gonglue_qxsc.png in Resources */,
 				04007B90192DFB4800BCD872 /* ShareSDKiPadSimpleShareViewUI.bundle in Resources */,
 				8CB963FF194556C30074A3C9 /* sysmain_zjlx_h4@2x.png in Resources */,
@@ -2476,6 +2510,7 @@
 				8C27C5DB195124A4006F927E /* sc_ct_h@2x.png in Resources */,
 				041B28A91966451A00FD4E0B /* action-red-button.png in Resources */,
 				8CB964161945591F0074A3C9 /* sysmain_kqcc_h4.png in Resources */,
+				04BDEE55199FB5C200AF9BCE /* solid@2x.png in Resources */,
 				8CFE33061952DAB100D693C0 /* gonglue_share@2x.png in Resources */,
 				8CB963E9194553480074A3C9 /* sysmain_lnzt4.png in Resources */,
 				04007B81192DFB4800BCD872 /* PinterestSDKResources.bundle in Resources */,
@@ -2508,6 +2543,7 @@
 				8CB9640E1945584F0074A3C9 /* sysmain_mnks4@2x.png in Resources */,
 				04FE7C2E191DF6A300DC77D8 /* Images.xcassets in Resources */,
 				8CB96429194583600074A3C9 /* gonglue_sc_h.png in Resources */,
+				04BDEE57199FD6DB00AF9BCE /* note.xib in Resources */,
 				8CB963EA194553480074A3C9 /* sysmain_lnzt4@2x.png in Resources */,
 				0462F2031950BABF00EB661E /* upexamselect.png in Resources */,
 				B0614604192A533E00B8C7E4 /* sysmain_lnzt_h.png in Resources */,
@@ -2533,6 +2569,7 @@
 				8CB963E5194553480074A3C9 /* sysmain_lnzt_h@2x.png in Resources */,
 				04007B87192DFB4800BCD872 /* WeiboSDK.bundle in Resources */,
 				8C27C5E1195124A4006F927E /* sc_st@2x.png in Resources */,
+				04BDEE4D199F2C0000AF9BCE /* member@2x.jpg in Resources */,
 				0468EF4119572EBF00BA7B0A /* UMSCommentDetailController.xib in Resources */,
 				0431C3CB1950BA120057C72B /* biji_bianji@2x.png in Resources */,
 				041B28A41966451A00FD4E0B /* action-gray-button-selected@2x.png in Resources */,

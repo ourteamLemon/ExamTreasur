@@ -12,8 +12,12 @@
 {
  
     MZTimerLabel    *_timerExample;
+    
     NSMutableArray  *dataArray;
+    
+    //存放tableview Controller的东西
     NSMutableArray  *ArraywithTV;
+    //计时器
     NSTimer         *timer;
     //最大的数组
     NSMutableArray  *bigarray;
@@ -26,7 +30,11 @@
     
     //开始题目
     int  startAnswer;
-    int  endAnswer;
+    
+    //是否需要加载
+    BOOL  isNeedLoading;
+    //记录下
+    int lastTimesPage;
 }
 
 @property (nonatomic,strong) NSDictionary *datadic;

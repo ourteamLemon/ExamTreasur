@@ -16,6 +16,7 @@
 @property (nonatomic,assign) int   gindex;
 - (id)initWithStyle:(UITableViewStyle)style  Dictinary:(NSDictionary*)dataDictory index:(int)index;
 -(void)disposeDictionary:(NSDictionary *)dataDictory;
+//处理字典中得值被改变
 -(void)disposeDictionarychange:(int )index;
 -(void)initTableView;
 
@@ -25,7 +26,6 @@
 - (BOOL)showSectionView;
 - (void)changeSectionView;
 - (void)collectExercises;
-
--(int)calculateSectionHeight:(NSString*)calultString;
+-(CGFloat)calculateHeadHeight:(NSString*)str font:(UIFont*)FontSize;
 
 @end

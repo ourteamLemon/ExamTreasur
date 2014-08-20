@@ -30,7 +30,9 @@
     
     // 显示字体的高度
     NSString  *needCountHeightStr = [[[self.dataDict objectForKey:@"topics"]objectAtIndex:0]objectForKey:@"TM_JX"];
-    CGFloat  sectionHeight =  [self calculateSectionHeight:needCountHeightStr];
+    UIFont  *font = [UIFont systemFontOfSize:17];
+    
+    CGFloat  sectionHeight = [self calculateHeadHeight:needCountHeightStr font:font];
     UILabel  *analysislabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 0, 300, sectionHeight+10)];
     analysislabel.text = needCountHeightStr;
     analysislabel.numberOfLines = 0;

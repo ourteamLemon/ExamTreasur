@@ -11,12 +11,13 @@
 @interface AnswerCardViewController ()
 @end
 @implementation AnswerCardViewController
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil Nsarray:(NSArray*)answercardArray
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil Nsarray:(NSArray*)answercardArray  downindex:(int)index
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
         receiveArray = answercardArray;
+        downloadIndex = index;
     }
     return self;
 }
@@ -41,7 +42,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    answerCard = [[CCAnswerCard alloc]initWithFrame:self.view.frame Nsarray:receiveArray];
+    answerCard = [[CCAnswerCard alloc]initWithFrame:self.view.frame Nsarray:receiveArray downloadIndex:downloadIndex];
     [self.view addSubview:answerCard.view];
     [answerCard setTager:self andAction:@selector(btnPressed:)];
     [self setNavgation];
